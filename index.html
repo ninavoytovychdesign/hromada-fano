@@ -290,6 +290,33 @@ body.lock{overflow:hidden}
 .sent .ok{width:48px;height:48px;border-radius:50%;background:#E5F3EA;color:#1E7A3E;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:8px}
 .sent .link{margin-top:8px;min-height:44px}
 .pol-dots{display:none}
+
+/* figma sync 23.11 */
+:root{--head:Inter,system-ui,sans-serif}
+.display,.h1,.h2{font-weight:700;letter-spacing:0}
+.display{font-size:66px;line-height:70px}
+.btn.dark{background:var(--dark)}
+.hero .photo{aspect-ratio:792/540}
+.hero .photo img{object-position:center 75%}
+.act h3{font-size:22px;line-height:28px}
+.rows a{font-size:22px;line-height:28px}
+.about{position:relative;overflow:hidden}
+.about .t .body-l{font-size:22px;line-height:32px;color:var(--text)}
+.ros{position:absolute;top:-243px;width:486px;height:486px;pointer-events:none}
+.ros-l{left:-243px}.ros-r{right:-243px}
+.about .wrap{position:relative;z-index:1}
+
+.founder-card .role{font-size:16px;line-height:24px;font-weight:500;color:#fff}
+.founder-card .quote{font-weight:700;color:#FFEDA8}
+.founder-card .t p:not(.role):not(.quote){font-size:18px;line-height:28px}
+.story .t .h2{font-size:32px!important;line-height:40px!important}
+.story .t p{font-size:18px;line-height:28px}
+.join{grid-template-columns:1fr 540px;grid-template-rows:auto 1fr;align-items:start;column-gap:48px;row-gap:48px}
+.join .t{grid-column:1;grid-row:1}
+.join .fb-btn{grid-column:1;grid-row:2;justify-self:start;align-self:start;width:auto}
+.join .side{grid-column:2;grid-row:1/3}
+.join::after{display:none}
+.join-orn{position:absolute;left:0;bottom:0;width:282px;height:289px;pointer-events:none;z-index:0}
 /* small desktop */
 @media (max-width:1200px){
   :root{--pad:48px}
@@ -308,7 +335,7 @@ body.lock{overflow:hidden}
   :root{--pad:32px}
   .display{font-size:48px;line-height:56px}
   .h1{font-size:40px;line-height:48px}
-  .h2{font-size:32px;line-height:40px}
+  .h2{font-size:40px;line-height:48px}
   .sec{padding:80px 0}
   .hdr .wrap{height:72px}
   .nav,.acts .btn{display:none}
@@ -319,7 +346,7 @@ body.lock{overflow:hidden}
   .mmenu .btn{margin-top:24px;width:100%}
   .hero{padding:32px 0 64px}
   .hero .wrap{grid-template-columns:1fr;gap:32px}
-  .hero .photo{aspect-ratio:16/9}
+  .hero .photo{aspect-ratio:792/540}
   .cards3{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc((100% - 24px)/2.15);overflow-x:auto;scroll-snap-type:x mandatory;margin-left:calc(-1*var(--pad));margin-right:calc(-1*var(--pad));padding:0 var(--pad) 4px;scroll-padding:0 var(--pad);scrollbar-width:none}
   .cards3::-webkit-scrollbar{display:none}
   .act{scroll-snap-align:start}
@@ -334,7 +361,11 @@ body.lock{overflow:hidden}
   .track{grid-auto-columns:calc((100% - 24px)/2);align-items:start}
   .thx-wrap{grid-template-columns:1fr;gap:24px}
   .thx .doc{height:380px}
-  .join{padding:40px;grid-template-columns:1fr}
+  .join{padding:40px;grid-template-columns:1fr;grid-template-rows:none}
+  .join .t,.join .side,.join .fb-btn{grid-column:1;grid-row:auto}
+  .join .fb-btn{order:3;justify-self:stretch;width:100%}
+  .join-orn{display:none}
+  .ros{display:none}
   .ftr .top{gap:48px}
   .phead{padding:40px 0}
   .phead .wrap{grid-template-columns:1fr;gap:32px}
@@ -362,15 +393,15 @@ body.lock{overflow:hidden}
 /* mobile */
 @media (max-width:600px){
   :root{--pad:20px}
-  .display{font-size:40px;line-height:48px}
-  .h1{font-size:32px;line-height:40px}
-  .h2{font-size:28px;line-height:36px}
+  .display{font-size:48px;line-height:56px}
+  .h1{font-size:40px;line-height:48px}
+  .h2{font-size:40px;line-height:48px}
   .lead{font-size:18px;line-height:28px}
   .body-l{font-size:16px;line-height:26px}
   .sec{padding:80px 0}
   .hero{padding:24px 0 64px}
   .hero .txt{gap:16px}
-  .hero .photo{aspect-ratio:4/3}
+  .hero .photo{aspect-ratio:350/238}
   /* buttons: full width, stacked */
   .btn{width:100%}
   .hero-actions,.join .btns,.ask,.fb,.sos{flex-direction:column;align-items:stretch;gap:12px}
@@ -384,7 +415,7 @@ body.lock{overflow:hidden}
   .dir-card .ph{aspect-ratio:16/9}
   .dir-card .in{padding:24px 20px}
   .dir-card .h1{font-size:28px;line-height:36px}
-  .rows a{font-size:17px;line-height:24px;padding:16px 0}
+  .rows a{font-size:18px;line-height:28px;padding:16px 0}
   .pol-wall{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:-24px -20px -24px;padding:48px 0 56px;scrollbar-width:none}
   .pol-wall::-webkit-scrollbar{display:none}
   .pol{flex:0 0 66%;width:auto;margin:0 17%!important;scroll-snap-align:center;scroll-snap-stop:always}
@@ -397,7 +428,12 @@ body.lock{overflow:hidden}
   .founder-card .ph img{aspect-ratio:4/5;object-position:center 0%}
   .founder-card .t{padding:28px 20px 32px}
   .founder-card .t .small,.founder-card .t .label{font-size:14px}
-  .founder-card .quote{font-size:20px;line-height:28px}
+  .founder-card .quote{font-size:24px;line-height:32px}
+  .founder-card .h2{font-size:32px;line-height:40px}
+  .about .t .body-l{font-size:18px;line-height:28px}
+  .act h3{font-size:18px;line-height:28px}
+  .slogan{font-size:18px;line-height:28px}
+  .lead{font-size:20px;line-height:32px}
   .sec-head{flex-direction:column;align-items:flex-start;gap:20px}
   .sec-head .ctrl{width:100%}
   .sec-head .ctrl .label{margin-right:auto;font-size:14px}
@@ -407,11 +443,13 @@ body.lock{overflow:hidden}
   .story{display:flex;flex-direction:column;gap:12px;padding-top:32px;margin-top:32px}
   .story:first-of-type{margin-top:32px}
   .story .big{height:auto;aspect-ratio:4/3}
-  .story .smalls{display:grid;grid-template-rows:none;grid-template-columns:1fr 1fr;gap:12px;height:auto}
+  .story .smalls{display:none}
   .story .smalls>*{aspect-ratio:4/3}
   .story .t{order:3;gap:8px;padding-top:8px}
-  .story .t .h2{font-size:24px!important;line-height:32px!important}
-  .join{padding:28px 20px;border-radius:24px;gap:28px}
+  .story .t .h2{font-size:32px!important;line-height:40px!important}
+  .join{padding:24px;border-radius:24px;gap:32px}
+  .band,.band-w{display:none}
+  .band-gap{padding-bottom:0}
   .join::after{right:8px;width:32px}
   .band{height:40px}
   .band-gap{padding-bottom:80px}
@@ -483,8 +521,7 @@ body.lock{overflow:hidden}
         <p class="slogan">З Україною у серці</p>
         <p class="lead">Організовуємо виставки й зустрічі у Фано та збираємо допомогу для України.</p>
         <div class="hero-actions">
-          <a class="btn" href="#diialnist">Що ми робимо ↓</a>
-          <a class="link" href="#dovidnyk">Довідник Фано →</a>
+          <a class="btn dark" href="#diialnist">Що ми робимо ↓</a>
         </div>
       </div>
       <div class="photo"><img src="img/7c92042190.jpg" alt="Громада українців Фано з прапорами біля собору"></div>
@@ -494,7 +531,7 @@ body.lock{overflow:hidden}
   <div class="band" aria-hidden="true"></div>
   <section class="sec" id="diialnist">
     <div class="wrap">
-      <h2 class="h1">Що ми робимо</h2>
+      <h2 class="h2">Що ми робимо</h2>
       <div class="cards3">
         <article class="act">
           <div class="ph"><img src="img/fefc57321d.jpg" alt="Виставка дитячих робіт у медіатеці MeMo"></div>
@@ -550,9 +587,10 @@ body.lock{overflow:hidden}
   </section>
 
   <section class="sec about milk" id="pro-hromadu">
+    <img class="ros ros-l" src="img/rosette.svg" alt="" aria-hidden="true"><img class="ros ros-r" src="img/rosette.svg" alt="" aria-hidden="true">
     <div class="wrap">
       <div class="t">
-        <h2 class="h1">Про нас</h2>
+        <h2 class="h2">Про нас</h2>
         <p class="body-l">У лютому 2022 року у Фано з’явилася наша громада. Відтоді ми збираємося, щоб підтримувати Україну, відзначати українські свята й знайомити мешканців міста з нашими традиціями.</p>
         <p class="body-l">За ці роки було багато різних моментів. У медіатеці MeMo показували роботи українських дітей, на Festa dei popoli зустрічали гостей в українському наметі.</p>
         <p class="body-l">Були й волонтерські будні, коли збирали продукти, пакували коробки й готували допомогу до відправлення.</p>
@@ -575,8 +613,8 @@ body.lock{overflow:hidden}
       <article class="founder-card">
         <div class="ph"><img src="img/a47f192515.jpg" alt="Тетяна Микитюк у вишиванці"></div>
         <div class="t">
-          <h2 class="h1">Тетяна Микитюк</h2>
-          <p class="label" style="opacity:.8">Засновниця української громади у Фано</p>
+          <h2 class="h2">Тетяна Микитюк</h2>
+          <p class="role">Засновниця громади у Фано</p>
           <p class="quote">«Україна – в моєму серці, де б я не була.»</p>
           <p>Тетяна родом із Коломиї, що на Прикарпатті. Уже багато років вона живе й працює в Італії. З 2014 року Тетяна волонтерить: підтримує українських захисників і допомагає тим, хто потребує підтримки. З роками волонтерство стало важливою частиною її життя.</p>
           <p>У лютому 2022 року Тетяна заснувала українську громаду у Фано. Разом з іншими волонтерами вона збирає й передає допомогу в Україну, підтримує дітей та організовує події, на яких мешканці Фано знайомляться з українськими традиціями.</p>
@@ -603,7 +641,7 @@ body.lock{overflow:hidden}
 
   <section class="sec" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head"><h2 class="h1">Галерея</h2><a class="link" href="#fotoarkhiv">Весь фотоархів →</a></div>
+      <div class="sec-head"><h2 class="h2">Галерея</h2><a class="link" href="#fotoarkhiv">Весь фотоархів →</a></div>
       <div id="stories"></div>
     </div>
   </section>
@@ -615,10 +653,11 @@ body.lock{overflow:hidden}
           <h2 class="h2">Як долучитися</h2>
           <p>Хочете допомогти зі зборами, долучитися до громади чи запропонувати співпрацю? Напишіть нам – лист прийде на пошту громади, і ми відповімо вам на email.</p>
         </div>
+        <a class="btn ghost fb-btn" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook громади ↗</a>
         <div class="side">
           <div class="form-card" data-form="join"></div>
-          <a class="btn ghost" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook громади ↗</a>
         </div>
+        <img class="join-orn" src="img/ornament-corner.svg" alt="" aria-hidden="true">
       </div>
     </div>
   </section>
