@@ -254,15 +254,14 @@ body.lock{overflow:hidden}
 
 /* thanks list */
 .thx-wrap{display:grid;grid-template-columns:384px 1fr;gap:64px;align-items:start}
-.thx-head{display:flex;flex-direction:column;gap:16px;position:sticky;top:120px}
-.thx-list{list-style:none;border-top:1px solid var(--border)}
-.thx-row{display:grid;grid-template-columns:88px 1fr auto;gap:24px;align-items:baseline;padding:24px 0;border-bottom:1px solid var(--border)}
-.thx-y{font-family:var(--head);font-weight:800;font-size:24px;line-height:32px;color:var(--blue)}
-.thx-y.none{font-family:inherit;font-weight:500;font-size:14px;color:var(--muted)}
-.thx-b{display:flex;flex-direction:column;gap:4px}
-.thx-for{font-size:22px;line-height:28px;font-weight:600}
-.thx-from{color:var(--text)}
-.thx-to{font-size:14px;line-height:20px;color:var(--muted)}
+.thx-head{display:flex;flex-direction:column;gap:16px}
+.thx-side{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.thx-list{list-style:none;border-top:1px solid var(--border);width:100%}
+.thx-row{display:flex;align-items:center;gap:24px;padding:16px 0;border-bottom:1px solid var(--border)}
+.thx-list:not(.all) .thx-row:nth-child(n+4){display:none}
+.thx-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.thx-org{font-size:16px;line-height:24px;font-weight:600}
+.thx-cap{font-size:14px;line-height:20px;color:var(--muted)}
 .thx-doc{font-size:14px;white-space:nowrap;min-height:44px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 /* contact form */
@@ -333,8 +332,7 @@ body.lock{overflow:hidden}
   .band-gap{padding-bottom:80px}
   .orn{height:420px;top:auto;bottom:0;transform:none}
   .track{grid-auto-columns:calc((100% - 24px)/2);align-items:start}
-  .thx-wrap{grid-template-columns:1fr;gap:32px}
-  .thx-head{position:static}
+  .thx-wrap{grid-template-columns:1fr;gap:24px}
   .thx .doc{height:380px}
   .join{padding:40px;grid-template-columns:1fr}
   .ftr .top{gap:48px}
@@ -378,6 +376,8 @@ body.lock{overflow:hidden}
   .hero-actions,.join .btns,.ask,.fb,.sos{flex-direction:column;align-items:stretch;gap:12px}
   .hero-actions .link{display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#DCEBF8;color:var(--text);font-weight:600}
   .hero-actions .link:hover{text-decoration:none}
+  .thx-row{gap:16px;padding:12px 0}
+  .thx-side .btn{width:100%}
   .cards3{grid-auto-columns:85%;gap:16px;margin-top:32px}
   .act .tx{padding-top:20px}
   .dir-card{border-radius:24px}
@@ -402,13 +402,6 @@ body.lock{overflow:hidden}
   .sec-head .ctrl{width:100%}
   .sec-head .ctrl .label{margin-right:auto;font-size:14px}
   .track{grid-auto-columns:85%;gap:16px;margin-top:24px}
-  .thx-row{grid-template-columns:1fr auto;grid-template-areas:"y doc" "b b";gap:4px 12px;padding:20px 0;align-items:center}
-  .thx-y{grid-area:y}.thx-b{grid-area:b}.thx-doc{grid-area:doc}
-  .thx-list:not(.all) .thx-row:nth-child(n+5){display:none}
-  .thx-more{display:flex!important}
-  .thx-y{font-size:20px;line-height:28px}
-  .thx-for{font-size:22px;line-height:28px}
-  .thx-doc{min-height:40px}
   .thx .doc{height:280px;padding:16px}
   .thx .tx{padding:20px}
   .story{display:flex;flex-direction:column;gap:12px;padding-top:32px;margin-top:32px}
@@ -598,10 +591,12 @@ body.lock{overflow:hidden}
       <div class="thx-wrap">
         <div class="thx-head">
           <h2 class="h1">Подяки та відзнаки</h2>
-          <p class="body-l">Українські установи й організації дякували громаді Фано та її засновниці Тетяні Микитюк за волонтерську роботу, гуманітарну допомогу й підтримку дітей.</p>
-          <p class="label muted" id="thxTotal"></p>
+          <p class="body-l muted">Подяки громаді Фано й Тетяні Микитюк за волонтерство та допомогу Україні.</p>
         </div>
-        <div><ol class="thx-list" id="thx"></ol><button class="btn soft thx-more" id="thxMore" style="display:none;margin-top:24px">Показати всі подяки</button></div>
+        <div class="thx-side">
+          <ul class="thx-list" id="thx"></ul>
+          <button class="btn soft thx-more" id="thxMore" type="button" aria-expanded="false" aria-controls="thx">Показати всі 9 подяк</button>
+        </div>
       </div>
     </div>
   </section>
@@ -746,11 +741,18 @@ const THANKS = [
  ['575ebff5db','Рівненський державний гуманітарний університет','Мешканцям, підприємствам і організаціям Фано, Пезаро, Апекьо, Сан-Костанцо','Gratitudine – за організацію та підтримку волонтерства'],
  ['d6c8e727bd','Рівненський державний гуманітарний університет','Організації AUSER Apecchio','Gratitudine – за організацію та підтримку волонтерства']];
 const thx = $('#thx');
-const yr=w=>{const m=w.match(/ · (\d{4})$/);return m?m[1]:'';};
-const THX=THANKS.map(([h,o,to,w],i)=>({h,o,to,i,w:w.replace(/ · \d{4}$/,''),y:yr(w)})).sort((a,b)=>(b.y||'0').localeCompare(a.y||'0'));
-thx.innerHTML=THX.map(t=>`<li class="thx-row"><span class="thx-y${t.y?'':' none'}">${t.y||'[рік]'}</span><div class="thx-b"><p class="thx-for">${t.w}</p><p class="thx-from">${t.o}</p><p class="thx-to">Кому: ${t.to}</p></div><button class="link thx-doc" data-photo="thanks:${t.i}">Переглянути<span class="sr"> подяку від ${t.o}</span></button></li>`).join('');
-$('#thxTotal').textContent=`${THANKS.length} подяк`;
-$('#thxMore').textContent=`Показати ще ${THANKS.length-4}`;$('#thxMore').onclick=e=>{thx.classList.add('all');e.currentTarget.remove();};
+const THX=[
+ [3,'Смизька селищна рада','Громаді Фано за допомогу захисникам, дітям і переселенцям','2023'],
+ [1,'Одеський інклюзивно-ресурсний центр № 1','Громаді Фано за допомогу дітям з особливими освітніми потребами',''],
+ [2,'Нововоронцовська селищна військова адміністрація','Тетяні Микитюк за гуманітарну допомогу жителям громади','2023'],
+ [0,'Благодійний фонд «101 варіант»','Тетяні Микитюк і громаді Фано за підтримку волонтерської діяльності',''],
+ [4,'Фестиваль «Барви писанки»','Тетяні Микитюк і українцям Фано за допомогу й підтримку',''],
+ [5,'ГО «Харків Назавжди»','Громаді Фано за допомогу захисникам, дітям-сиротам і переселенцям','2023'],
+ [6,'Рівненський державний гуманітарний університет','Тетяні Микитюк за підтримку волонтерської діяльності',''],
+ [7,'Рівненський державний гуманітарний університет','Мешканцям і організаціям Фано, Пезаро, Апекьо, Сан-Костанцо за підтримку волонтерства',''],
+ [8,'Рівненський державний гуманітарний університет','Організації AUSER Apecchio за підтримку волонтерства','']];
+thx.innerHTML=THX.map(([i,o,c,y])=>`<li class="thx-row"><div class="thx-b"><p class="thx-org">${o}</p><p class="thx-cap">${c}${y?` · ${y}`:''}</p></div><button class="link thx-doc" type="button" data-photo="thanks:${i}">Переглянути<span class="sr"> подяку: ${o}</span></button></li>`).join('');
+$('#thxMore').onclick=e=>{const b=e.currentTarget,open=thx.classList.toggle('all');b.textContent=open?'Згорнути список':`Показати всі ${THX.length} подяк`;b.setAttribute('aria-expanded',open);if(!open)$('.thx-wrap').scrollIntoView({block:'start'});};
 function thxState(){}
 
 // ---------- albums ----------
