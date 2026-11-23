@@ -542,6 +542,21 @@ a.album{display:flex;flex-direction:column;text-align:left;color:inherit}
   .ic-acts .btn{width:100%}
   .sos-link{align-self:stretch}
 }
+
+/* review 23.11 */
+[hidden]{display:none!important}
+.mmenu a.it[aria-current="page"]{color:var(--blue);box-shadow:inset 4px 0 0 var(--yellow);padding-left:16px}
+.chip:focus-visible,.burger:focus-visible,.x:focus-visible,.arrow:focus-visible,.pol-dots button:focus-visible,.tab:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.sos-link{align-self:flex-start;background:#DCEBF8;color:var(--text)}
+@media (max-width:600px){
+  .act-link,.story-link,.thx-doc,.ext,.kv dd a,.stbl a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .ic .ext{min-height:44px}
+  .chips .chip{height:44px}
+  .dir-card .link,.gal-head .link{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;padding:12px 16px;border-radius:999px;background:#DCEBF8;color:var(--text);font-weight:600;text-decoration:none}
+  .gal-head{align-items:stretch!important}
+  .kv dd a{display:inline-flex;align-items:center;min-height:44px}
+  .rows a{display:flex;width:100%;justify-content:space-between}
+}
 </style>
 </head>
 <body>
@@ -706,7 +721,7 @@ a.album{display:flex;flex-direction:column;text-align:left;color:inherit}
 
   <section class="sec" style="padding-top:0">
     <div class="wrap">
-      <div class="join" id="napysaty">
+      <div class="join" id="napysaty" data-needs-contact>
         <div class="t">
           <h2 class="h2">Як долучитися</h2>
           <p>Хочете допомогти зі зборами, долучитися до громади чи запропонувати співпрацю? Напишіть нам.</p>
@@ -730,7 +745,7 @@ a.album{display:flex;flex-direction:column;text-align:left;color:inherit}
         <p class="crumbs"><a href="#home">Головна</a> / Довідник Фано</p>
         <h1 class="h1">Довідник Фано</h1>
         <p class="lead">Фано – місто на узбережжі Адріатичного моря в регіоні Марке. Тут зібрали адреси установ, контакти й посилання на офіційні сайти, які можуть бути корисними.</p>
-        <a class="sos-link" href="#dovidnyk-terminovo"><span class="n">112</span><span>Термінові контакти →</span></a>
+        <a class="btn soft sos-link" href="#dovidnyk-terminovo">Термінові контакти →</a>
         <span class="pill"><span class="dot" style="margin:0"></span>Перевірено 22 листопада 2026. Години прийому можуть змінюватися.</span>
       </div>
       <div class="ph"><img loading="lazy" decoding="async" srcset="img/s/7bb49001d1.jpg 480w, img/7bb49001d1.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/7bb49001d1.jpg" alt="Арка Августа в мальованій техніці"></div>
@@ -741,7 +756,7 @@ a.album{display:flex;flex-direction:column;text-align:left;color:inherit}
       <div class="tabs" role="tablist" aria-label="Розділи довідника" id="tabs"><span class="cap">Розділи довідника</span></div>
       <div>
         <div class="panel" id="panel" role="tabpanel" tabindex="0"></div>
-        <div class="ask">
+        <div class="ask" data-needs-contact>
           <div><p class="card-t">Не знайшли відповіді?</p><p class="muted">Напишіть нам – підкажемо, куди звернутися.</p></div>
           <button class="btn" data-open="contact">Написати нам</button>
         </div>
@@ -768,9 +783,9 @@ a.album{display:flex;flex-direction:column;text-align:left;color:inherit}
   </div>
   <div class="wrap">
     <div class="agrid" id="agrid"></div>
-    <div class="fb">
+    <div class="fb" data-fb hidden>
       <div><p class="card-t">Більше фото – у Facebook громади</p><p class="muted">Там з’являються свіжі дописи й фото з подій.</p></div>
-      <a class="btn soft" data-fb hidden target="_blank" rel="noopener">Відкрити сторінку у Facebook ↗</a>
+      <a class="btn soft" data-fb-link target="_blank" rel="noopener">Відкрити сторінку у Facebook ↗</a>
     </div>
   </div>
 </section>
@@ -926,6 +941,9 @@ let tx0=null;$('#lb').addEventListener('touchstart',e=>tx0=e.touches[0].clientX,
 
 // ---------- contact form ----------
 // Надсилання працює лише з SITE.formEndpoint. Без нього форма не імітує відправлення, а показує перевірений канал зв'язку.
+// Без робочого контакту дію «Написати нам» не показуємо ніде
+const HAS_CONTACT=!!(SITE.formEndpoint||SITE.email||SITE.facebook);
+if(!HAS_CONTACT){$$('[data-open="contact"],[data-needs-contact]').forEach(el=>el.hidden=true);const js=$('#napysaty');js&&(js.closest('section').hidden=true);}
 if(SITE.facebook){$$('[data-fb]').forEach(el=>{el.hidden=false;const a=el.matches('a')?el:el.querySelector('[data-fb-link]');if(a)a.href=SITE.facebook;});}
 function fallbackHTML(){
  const ch=SITE.email?`<a class="btn" href="mailto:${SITE.email}">Написати на ${SITE.email}</a>`:(SITE.facebook?`<a class="btn" href="${SITE.facebook}" target="_blank" rel="noopener">Написати у Facebook ↗</a>`:'');
@@ -1048,7 +1066,8 @@ function route(){const h=location.hash.slice(1)||'home';
 function viewOf(h){return h==='dovidnyk'||h.startsWith('dovidnyk-')?'dovidnyk':(h==='fotoarkhiv'||h.startsWith('fotoarkhiv/'))?'fotoarkhiv':'home';}
 function setView(view){$$('[data-view]').forEach(v=>v.hidden=v.dataset.view!==view);
  $$('.nav a').forEach(a=>a.removeAttribute('aria-current'));
- const c=view==='home'?null:$(`.nav a[data-nav="${view}"]`);c&&c.setAttribute('aria-current','page');}
+ const c=view==='home'?null:$(`.nav a[data-nav="${view}"]`);c&&c.setAttribute('aria-current','page');
+ $$('#mmenu a').forEach(a=>{const on=view!=='home'&&a.getAttribute('href')==='#'+view;on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current');});}
 addEventListener('hashchange',route);route();
 </script>
 </body>
