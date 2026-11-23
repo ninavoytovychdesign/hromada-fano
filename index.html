@@ -255,7 +255,7 @@ body.lock{overflow:hidden}
 /* thanks list */
 .thx-wrap{display:grid;grid-template-columns:384px 1fr;gap:64px;align-items:start}
 .thx-head{display:flex;flex-direction:column;gap:16px}
-.thx-side{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.thx-side{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
 .thx-list{list-style:none;border-top:1px solid var(--border);width:100%}
 .thx-row{display:flex;align-items:center;gap:24px;padding:16px 0;border-bottom:1px solid var(--border)}
 .thx-list:not(.all) .thx-row:nth-child(n+4){display:none}
@@ -311,7 +311,8 @@ body.lock{overflow:hidden}
 .founder-card .t p:not(.role):not(.quote){font-size:18px;line-height:28px}
 .story .t .h2{font-size:32px!important;line-height:40px!important}
 .story .t p{font-size:18px;line-height:28px}
-.join{grid-template-columns:1fr 540px;grid-template-rows:auto 1fr;align-items:start;column-gap:48px;row-gap:48px}
+.story-link,.act-link{text-align:left;align-self:flex-start}
+.join{grid-template-columns:1fr 540px;grid-template-rows:auto 1fr;align-items:start;column-gap:48px;row-gap:24px}
 .join .t{grid-column:1;grid-row:1}
 .join .fb-btn{grid-column:1;grid-row:2;justify-self:start;align-self:start;width:auto}
 .join .side{grid-column:2;grid-row:1/3}
@@ -359,11 +360,11 @@ body.lock{overflow:hidden}
   .band-gap{padding-bottom:80px}
   .orn{height:420px;top:auto;bottom:0;transform:none}
   .track{grid-auto-columns:calc((100% - 24px)/2);align-items:start}
-  .thx-wrap{grid-template-columns:1fr;gap:24px}
+  .thx-wrap{grid-template-columns:minmax(0,1fr);gap:24px}
   .thx .doc{height:380px}
   .join{padding:40px;grid-template-columns:1fr;grid-template-rows:none}
   .join .t,.join .side,.join .fb-btn{grid-column:1;grid-row:auto}
-  .join .fb-btn{order:3;justify-self:stretch;width:100%}
+  .join .fb-btn{order:3;justify-self:stretch;width:100%;margin-top:-8px}
   .join-orn{display:none}
   .ros{display:none}
   .ftr .top{gap:48px}
@@ -376,6 +377,7 @@ body.lock{overflow:hidden}
   .tabs .cap{display:none}
   .tab{white-space:nowrap;background:var(--milk);border-radius:999px;padding:0 18px;height:44px;flex:none}
   .filters{top:72px}
+  .act-link,.story-link,.thx-doc,.dir-card .link,.gal-head .link{display:inline-flex;align-items:center;min-height:44px}
   .filters .wrap{flex-direction:column;align-items:stretch;gap:12px;padding-top:12px;padding-bottom:12px}
   .chips{margin:0 calc(-1*var(--pad));padding:0 var(--pad)}
   .yr .small{white-space:nowrap}
@@ -407,7 +409,8 @@ body.lock{overflow:hidden}
   .hero-actions,.join .btns,.ask,.fb,.sos{flex-direction:column;align-items:stretch;gap:12px}
   .hero-actions .link{display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#DCEBF8;color:var(--text);font-weight:600}
   .hero-actions .link:hover{text-decoration:none}
-  .thx-row{gap:16px;padding:12px 0}
+  .thx-row{flex-direction:column;align-items:flex-start;gap:0;padding:12px 0 4px}
+  .thx-b{width:100%}
   .thx-side .btn{width:100%}
   .cards3{grid-auto-columns:85%;gap:16px;margin-top:32px}
   .act .tx{padding-top:20px}
@@ -444,6 +447,11 @@ body.lock{overflow:hidden}
   .story:first-of-type{margin-top:32px}
   .story .big{height:auto;aspect-ratio:4/3}
   .story .smalls{display:none}
+  .act-link,.story-link,.thx-doc,.rows a,.dir-card .link{display:inline-flex;align-items:center;min-height:44px}
+  .sec-head.gal-head{gap:12px}
+  .gal-head .link{display:inline-flex;align-items:center;min-height:44px}
+  .btn{white-space:normal;height:auto;min-height:48px;padding:12px 16px;text-align:center;line-height:24px}
+  .btn.sm{min-height:44px;padding:10px 20px}
   .story .smalls>*{aspect-ratio:4/3}
   .story .t{order:3;gap:8px;padding-top:8px}
   .story .t .h2{font-size:32px!important;line-height:40px!important}
@@ -521,7 +529,7 @@ body.lock{overflow:hidden}
         <p class="slogan">З Україною у серці</p>
         <p class="lead">Організовуємо виставки й зустрічі у Фано та збираємо допомогу для України.</p>
         <div class="hero-actions">
-          <a class="btn dark" href="#diialnist">Що ми робимо ↓</a>
+          <a class="btn dark" href="#dovidnyk">Відкрити довідник Фано →</a>
         </div>
       </div>
       <div class="photo"><img src="img/7c92042190.jpg" alt="Громада українців Фано з прапорами біля собору"></div>
@@ -539,7 +547,7 @@ body.lock{overflow:hidden}
             <h3 class="card-t">Українська культура у Фано</h3>
             <p class="muted">Організовуємо виставки й знайомимо мешканців Фано з українськими традиціями.</p>
             <div class="ex"><span class="dot"></span><span>Виставка «Storia di una foglia» в медіатеці MeMo, 2023</span></div>
-            <a class="link" href="#fotoarkhiv" data-filter="Культура">Дивитись фото →</a>
+            <button class="link act-link" type="button" data-album="storia-di-una-foglia">Переглянути фото →</button>
           </div>
         </article>
         <article class="act">
@@ -548,7 +556,7 @@ body.lock{overflow:hidden}
             <h3 class="card-t">Допомога війську</h3>
             <p class="muted">Збираємо допомогу для українських військових.</p>
             <div class="ex"><span class="dot"></span><span>Збір ліків і медичних виробів для наших захисників та захисниць</span></div>
-            <a class="link" href="#fotoarkhiv" data-filter="Допомога">Дивитись фото →</a>
+            <button class="link act-link" type="button" data-album="zbory-zsu">Переглянути фото →</button>
           </div>
         </article>
         <article class="act">
@@ -557,7 +565,7 @@ body.lock{overflow:hidden}
             <h3 class="card-t">Підтримка дітей в Україні</h3>
             <p class="muted">Збираємо й передаємо допомогу дітям, які постраждали від війни.</p>
             <div class="ex"><span class="dot"></span><span>Допомога дитячому будинку з Маріуполя та Одеси</span></div>
-            <a class="link" href="#fotoarkhiv" data-filter="Допомога">Дивитись фото →</a>
+            <button class="link act-link" type="button" data-album-when="" hidden>Переглянути фото →</button>
           </div>
         </article>
       </div>
@@ -573,7 +581,7 @@ body.lock{overflow:hidden}
             <h2 class="h2">Де ми знаходимось</h2>
             <p class="body-l">Фано – місто на узбережжі Адріатичного моря в італійському регіоні Марке. Тут є історичний центр, порт і морська набережна. Саме у Фано об’єдналася Громада українців міста Фано.</p>
             <p class="body-l">Зібрали корисні адреси, контакти установ і посилання на офіційні сайти.</p>
-            <a class="link" href="#dovidnyk">Читати більше →</a>
+            <a class="link" href="#dovidnyk">Відкрити довідник →</a>
           </div>
           <nav class="rows" aria-label="Розділи довідника">
             <a href="#dovidnyk-dokumenty"><span>Документи й реєстрація</span><span>→</span></a>
@@ -641,7 +649,7 @@ body.lock{overflow:hidden}
 
   <section class="sec" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head"><h2 class="h2">Галерея</h2><a class="link" href="#fotoarkhiv">Весь фотоархів →</a></div>
+      <div class="sec-head gal-head"><h2 class="h2">Галерея</h2><a class="link" href="#fotoarkhiv">Весь фотоархів →</a></div>
       <div id="stories"></div>
     </div>
   </section>
@@ -653,7 +661,7 @@ body.lock{overflow:hidden}
           <h2 class="h2">Як долучитися</h2>
           <p>Хочете допомогти зі зборами, долучитися до громади чи запропонувати співпрацю? Напишіть нам – лист прийде на пошту громади, і ми відповімо вам на email.</p>
         </div>
-        <a class="btn ghost fb-btn" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook громади ↗</a>
+        <a class="btn ghost fb-btn" data-fb hidden target="_blank" rel="noopener">Відкрити сторінку у Facebook ↗</a>
         <div class="side">
           <div class="form-card" data-form="join"></div>
         </div>
@@ -711,7 +719,7 @@ body.lock{overflow:hidden}
     <div class="agrid" id="agrid"></div>
     <div class="fb">
       <div><p class="card-t">Більше фото – у Facebook громади</p><p class="muted">Там з’являються свіжі дописи й фото з подій.</p></div>
-      <a class="btn soft" href="https://www.facebook.com/" target="_blank" rel="noopener">Відкрити Facebook ↗</a>
+      <a class="btn soft" data-fb hidden target="_blank" rel="noopener">Відкрити сторінку у Facebook ↗</a>
     </div>
   </div>
 </section>
@@ -722,7 +730,7 @@ body.lock{overflow:hidden}
     <div class="top">
       <div><a href="#home" class="logo"><img src="img/logo-heart.svg" alt=""><span>Comunità<br>ucraina<br>di Fano</span></a><p class="muted" style="margin-top:20px">З Україною у серці · Con l’Ucraina nel cuore</p></div>
       <div><h4>Сторінки</h4><ul><li><a href="#diialnist">Діяльність</a></li><li><a href="#pro-hromadu">Про громаду</a></li><li><a href="#dovidnyk">Довідник Фано</a></li><li><a href="#fotoarkhiv">Фотоархів</a></li></ul></div>
-      <div><h4>Контакти</h4><ul><li data-email></li><li><a class="link" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook ↗</a></li><li class="muted">Фано, Марке</li></ul></div>
+      <div><h4>Контакти</h4><ul><li data-email></li><li data-fb hidden><a class="link" data-fb-link target="_blank" rel="noopener">Facebook ↗</a></li><li class="muted">Фано, Марке</li></ul></div>
     </div>
     <div class="bot"><span>© 2026 Громада українців міста Фано</span><span>Політика приватності</span></div>
   </div>
@@ -790,7 +798,7 @@ const THX=[
  [6,'Рівненський державний гуманітарний університет','Тетяні Микитюк за підтримку волонтерської діяльності',''],
  [7,'Рівненський державний гуманітарний університет','Мешканцям і організаціям Фано, Пезаро, Апекьо, Сан-Костанцо за підтримку волонтерства',''],
  [8,'Рівненський державний гуманітарний університет','Організації AUSER Apecchio за підтримку волонтерства','']];
-thx.innerHTML=THX.map(([i,o,c,y])=>`<li class="thx-row"><div class="thx-b"><p class="thx-org">${o}</p><p class="thx-cap">${c}${y?` · ${y}`:''}</p></div><button class="link thx-doc" type="button" data-photo="thanks:${i}">Переглянути<span class="sr"> подяку: ${o}</span></button></li>`).join('');
+thx.innerHTML=THX.map(([i,o,c,y])=>`<li class="thx-row"><div class="thx-b"><p class="thx-org">${o}</p><p class="thx-cap">${c}${y?` · ${y}`:''}</p></div><button class="link thx-doc" type="button" data-photo="thanks:${i}">Переглянути подяку<span class="sr"> від: ${o}</span></button></li>`).join('');
 $('#thxMore').onclick=e=>{const b=e.currentTarget,open=thx.classList.toggle('all');b.textContent=open?'Згорнути список':`Показати всі ${THX.length} подяк`;b.setAttribute('aria-expanded',open);if(!open)$('.thx-wrap').scrollIntoView({block:'start'});};
 function thxState(){}
 
@@ -820,8 +828,8 @@ $('#year').onchange=e=>{fYear=e.target.value;renderAlbums();};
 renderAlbums();
 
 // gallery stories on home
-const STORIES=[['festa-dei-popoli','Festa dei popoli','Український намет і зустріч із гостями фестивалю.','Альбом свята →'],['storia-di-una-foglia','Виставка в MeMo','Роботи українських дітей у міській медіатеці.','Альбом виставки →'],['zbir-likiv','Волонтерські будні','Збір продуктів і пакування допомоги для України.','Альбом зборів →']];
-$('#stories').innerHTML=STORIES.map(([id,t,d,l])=>{const a=ALBUMS.find(x=>x.id===id);const p=a.photos;return `<div class="story"><div class="t"><h3 class="h2" style="font-size:32px;line-height:40px">${t}</h3><p class="body-l">${d}</p><button class="link" style="text-align:left" data-album="${id}">${l}</button></div><button class="big ph" data-photo="${id}:0" aria-label="Відкрити фото"><img src="${img(p[0])}" alt=""></button><div class="smalls">${p.slice(1,3).map((h,i)=>`<button class="ph" data-photo="${id}:${i+1}" aria-label="Відкрити фото"><img src="${img(h)}" alt=""></button>`).join('')}</div></div>`}).join('');
+const STORIES=[['festa-dei-popoli','Festa dei popoli','Український намет і зустріч із гостями фестивалю.','Переглянути альбом'],['storia-di-una-foglia','Виставка в MeMo','Роботи українських дітей у міській медіатеці.','Переглянути альбом'],['zbir-likiv','Волонтерські будні','Збір продуктів і пакування допомоги для України.','Переглянути альбом']];
+$('#stories').innerHTML=STORIES.map(([id,t,d,l])=>{const a=ALBUMS.find(x=>x.id===id);const p=a.photos;return `<div class="story"><div class="t"><h3 class="h2" style="font-size:32px;line-height:40px">${t}</h3><p class="body-l">${d}</p><button class="link story-link" type="button" data-album="${id}">${l}<span class="sr">: ${t}</span></button></div><button class="big ph" data-photo="${id}:0" aria-label="Відкрити фото"><img src="${img(p[0])}" alt=""></button><div class="smalls">${p.slice(1,3).map((h,i)=>`<button class="ph" data-photo="${id}:${i+1}" aria-label="Відкрити фото"><img src="${img(h)}" alt=""></button>`).join('')}</div></div>`}).join('');
 
 // ---------- modals ----------
 let lastFocus=null;
@@ -842,12 +850,15 @@ let tx0=null;$('#lb').addEventListener('touchstart',e=>tx0=e.touches[0].clientX,
 // ---------- contact form ----------
 // FORM_ENDPOINT: адреса сервісу форм (напр. Web3Forms або Formspree), прив'язаного до пошти Тетяни. Поки порожньо – форма працює в демо-режимі.
 const FORM_ENDPOINT = "";
+// Посилання на сторінку громади у Facebook. Поки порожньо – усі кнопки Facebook сховані.
+const FACEBOOK_URL = "";
+if(FACEBOOK_URL){document.querySelectorAll('[data-fb]').forEach(el=>{el.hidden=false;const a=el.matches('a')?el:el.querySelector('[data-fb-link]');if(a)a.href=FACEBOOK_URL;});}
 function formHTML(id){return `<form class="form" novalidate data-id="${id}">
  <div class="fld"><label for="${id}-name">Ім’я</label><input id="${id}-name" name="name" autocomplete="name" placeholder="Олена"><p class="ferr" hidden></p></div>
  <div class="fld"><label for="${id}-email">Email для відповіді</label><input id="${id}-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="olena@gmail.com"><p class="ferr" hidden></p></div>
  <div class="fld"><label for="${id}-msg">Повідомлення</label><textarea id="${id}-msg" name="message" rows="4" placeholder="Хочу допомогти з наступним збором"></textarea><p class="ferr" hidden></p></div>
  <p class="fnote">Надсилаючи, ви погоджуєтеся з <a href="#" class="link">політикою приватності</a>.</p>
- <p class="fail" hidden>Не вдалося надіслати. Спробуйте ще раз за хвилину.</p>
+ <p class="fail" hidden>${FORM_ENDPOINT?'Не вдалося надіслати. Спробуйте ще раз за хвилину.':'Форму ще не підключено до пошти громади, тому повідомлення не надіслано.'}</p>
  <button class="btn" type="submit">Надіслати</button>
 </form>
 <div class="sent" hidden><span class="ok">✓</span><p class="card-t">Повідомлення надіслано</p><p class="muted">Відповімо на <b data-sent-to></b>. Зазвичай – протягом кількох днів.</p><button class="link" type="button" data-again>Написати ще одне</button></div>`;}
@@ -861,7 +872,7 @@ document.addEventListener('submit',async e=>{const form=e.target.closest('.form'
  fields.forEach(f=>{const m=check(f);setErr(f,m);if(m&&!first)first=f;});if(first){first.focus();return;}
  const btn=form.querySelector('[type=submit]');btn.disabled=true;btn.textContent='Надсилаємо…';form.querySelector('.fail').hidden=true;
  const data=Object.fromEntries(new FormData(form));let ok=true;
- try{if(FORM_ENDPOINT){const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({...data,subject:'Повідомлення з сайту громади'})});ok=r.ok;}else await new Promise(r=>setTimeout(r,700));}catch(_){ok=false;}
+ try{if(FORM_ENDPOINT){const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({...data,subject:'Повідомлення з сайту громади'})});ok=r.ok;}else{ok=false;}}catch(_){ok=false;}
  btn.disabled=false;btn.textContent='Надіслати';
  if(!ok){form.querySelector('.fail').hidden=false;return;}
  const sent=form.nextElementSibling;sent.querySelector('[data-sent-to]').textContent=data.email;form.hidden=true;sent.hidden=false;form.reset();});
