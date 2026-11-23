@@ -4,6 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Громада українців міста Фано</title>
+<meta name="description" content="Громада українців міста Фано: події та волонтерські збори, довідник із контактами установ Фано для українців і фотоархів громади.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:site_name" content="Громада українців міста Фано">
+<meta property="og:title" content="Громада українців міста Фано – З Україною у серці">
+<meta property="og:description" content="Події громади, довідник контактів Фано для українців і фотоархів.">
+<meta property="og:image" content="https://ninavoytovych.com/hromada-fano/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="img/7c92042190.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -318,6 +329,7 @@ body.lock{overflow:hidden}
 .join .side{grid-column:2;grid-row:1/3}
 .join::after{display:none}
 .join-orn{position:absolute;left:0;bottom:0;width:282px;height:289px;pointer-events:none;z-index:0}
+
 /* small desktop */
 @media (max-width:1200px){
   :root{--pad:48px}
@@ -489,7 +501,46 @@ body.lock{overflow:hidden}
   .win.narrow{position:absolute;bottom:0;left:0;right:0;min-height:0;border-radius:24px 24px 0 0;padding:28px 20px}
   .pgrid{grid-template-columns:1fr 1fr;gap:12px}
   .lb{padding:16px}
-  .lb .mid .arrow{display:none}
+}
+
+/* audit 23.11 */
+.sos-link{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:6px 20px 6px 6px;border-radius:999px;background:var(--dark);color:#fff;font-weight:600;align-self:flex-start}
+.sos-link .n{display:inline-flex;align-items:center;justify-content:center;height:36px;padding:0 12px;border-radius:999px;background:var(--yellow);color:var(--text);font-weight:800}
+.ic-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.ic .src,.stbl+.src{font-size:14px;line-height:20px;color:var(--muted);margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
+.ic .src a,.stbl+.src a{color:var(--blue);font-weight:600}
+.ic .ext{display:inline-flex;align-items:center;min-height:32px;font-size:14px}
+.kv dd a.eml{overflow-wrap:anywhere;word-break:break-word}
+.pec{display:inline-block;font-size:12px;line-height:18px;font-weight:700;padding:0 8px;border-radius:999px;background:var(--milk);color:var(--text);margin-right:4px}
+.checked{font-size:14px;color:var(--muted);margin-top:24px}
+.panel:focus{outline:none}.panel:focus-visible{outline:3px solid var(--yellow);outline-offset:4px;border-radius:8px}
+.tab:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.stbl{width:100%;border-collapse:collapse;font-size:15px;line-height:22px;margin-top:8px}
+.stbl th,.stbl td{text-align:left;vertical-align:top;padding:14px 16px;border-top:1px solid var(--border)}
+.stbl thead th{background:var(--milk);font-size:14px;color:var(--muted);font-weight:600;border-top:0}
+.stbl tbody th{font-weight:600}
+.stbl a{color:var(--blue);font-weight:600}
+.stbl td a.eml{overflow-wrap:anywhere}
+.form-off{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.form-off .btn{width:100%;white-space:normal;height:auto;min-height:48px}
+.empty{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+a.album{display:flex;flex-direction:column;text-align:left;color:inherit}
+@media (max-width:900px){
+  .cards3{display:grid;grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-columns:auto;overflow:visible;margin-left:0;margin-right:0;padding:0;scroll-snap-type:none;gap:16px}
+  .stbl thead{display:none}
+  .stbl,.stbl tbody,.stbl tr,.stbl th,.stbl td{display:block;width:100%}
+  .stbl tr{padding:14px 0;border-top:1px solid var(--border)}
+  .stbl th,.stbl td{border:0;padding:2px 0}
+  .stbl td::before{content:attr(data-l);display:block;font-size:13px;line-height:18px;color:var(--muted);margin-top:8px}
+}
+@media (max-width:600px){
+  .cards3{grid-template-columns:minmax(0,1fr);gap:40px}
+  .lb{padding:16px 12px 20px}
+  .lb .mid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr) auto;gap:16px}
+  .lb .mid img{grid-column:1/-1;grid-row:1;width:100%;height:100%}
+  .lb .mid .arrow{display:inline-flex;grid-row:2;width:100%;height:48px;border-radius:999px}
+  .ic-acts .btn{width:100%}
+  .sos-link{align-self:stretch}
 }
 </style>
 </head>
@@ -505,7 +556,6 @@ body.lock{overflow:hidden}
       <a href="#fotoarkhiv" data-nav="fotoarkhiv">Фотоархів</a>
     </nav>
     <div class="acts">
-      <span class="lang"><b>UA</b> / IT</span>
       <button class="btn sm dark" data-open="contact">Написати нам</button>
       <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -532,7 +582,7 @@ body.lock{overflow:hidden}
           <a class="btn dark" href="#dovidnyk">Відкрити довідник Фано →</a>
         </div>
       </div>
-      <div class="photo"><img src="img/7c92042190.jpg" alt="Громада українців Фано з прапорами біля собору"></div>
+      <div class="photo"><img fetchpriority="high" decoding="async" src="img/7c92042190.jpg" srcset="img/s/7c92042190.jpg 480w, img/7c92042190.jpg 1000w" sizes="(max-width:900px) 100vw, 55vw" alt="Громада українців Фано з прапорами біля собору"></div>
     </div>
   </div>
 
@@ -542,7 +592,7 @@ body.lock{overflow:hidden}
       <h2 class="h2">Що ми робимо</h2>
       <div class="cards3">
         <article class="act">
-          <div class="ph"><img src="img/fefc57321d.jpg" alt="Виставка дитячих робіт у медіатеці MeMo"></div>
+          <div class="ph"><img loading="lazy" decoding="async" srcset="img/s/fefc57321d.jpg 480w, img/fefc57321d.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/fefc57321d.jpg" alt="Виставка дитячих робіт у медіатеці MeMo"></div>
           <div class="tx">
             <h3 class="card-t">Українська культура у Фано</h3>
             <p class="muted">Організовуємо виставки й знайомимо мешканців Фано з українськими традиціями.</p>
@@ -551,7 +601,7 @@ body.lock{overflow:hidden}
           </div>
         </article>
         <article class="act">
-          <div class="ph"><img src="img/3961ae706c.jpg" alt="Волонтери з коробками допомоги"></div>
+          <div class="ph"><img loading="lazy" decoding="async" srcset="img/s/3961ae706c.jpg 480w, img/3961ae706c.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/3961ae706c.jpg" alt="Волонтери з коробками допомоги"></div>
           <div class="tx">
             <h3 class="card-t">Допомога війську</h3>
             <p class="muted">Збираємо допомогу для українських військових.</p>
@@ -560,7 +610,7 @@ body.lock{overflow:hidden}
           </div>
         </article>
         <article class="act">
-          <div class="ph"><img src="img/5fbd7f007c.jpg" alt="Діти під час передачі допомоги"></div>
+          <div class="ph"><img loading="lazy" decoding="async" srcset="img/s/5fbd7f007c.jpg 480w, img/5fbd7f007c.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/5fbd7f007c.jpg" alt="Діти під час передачі допомоги"></div>
           <div class="tx">
             <h3 class="card-t">Підтримка дітей в Україні</h3>
             <p class="muted">Збираємо й передаємо допомогу дітям, які постраждали від війни.</p>
@@ -575,7 +625,7 @@ body.lock{overflow:hidden}
   <section class="sec" style="padding-top:0">
     <div class="wrap">
       <div class="dir-card">
-        <div class="ph"><img src="img/9cfbb04ff9.jpg" alt="Арка Августа у Фано"></div>
+        <div class="ph"><img loading="lazy" decoding="async" srcset="img/s/9cfbb04ff9.jpg 480w, img/9cfbb04ff9.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/9cfbb04ff9.jpg" alt="Арка Августа у Фано"></div>
         <div class="in">
           <div class="t">
             <h2 class="h2">Де ми знаходимось</h2>
@@ -599,17 +649,17 @@ body.lock{overflow:hidden}
     <div class="wrap">
       <div class="t">
         <h2 class="h2">Про нас</h2>
-        <p class="body-l">У лютому 2022 року у Фано з’явилася наша громада. Відтоді ми збираємося, щоб підтримувати Україну, відзначати українські свята й знайомити мешканців міста з нашими традиціями.</p>
-        <p class="body-l">За ці роки було багато різних моментів. У медіатеці MeMo показували роботи українських дітей, на Festa dei popoli зустрічали гостей в українському наметі.</p>
-        <p class="body-l">Були й волонтерські будні, коли збирали продукти, пакували коробки й готували допомогу до відправлення.</p>
+        <p class="body-l">Ми збираємося, щоб підтримувати Україну й разом відзначати українські свята.</p>
+        <p class="body-l">У медіатеці MeMo показували роботи українських дітей, а на Festa dei popoli зустрічали гостей в українському наметі.</p>
+        <p class="body-l">Були й волонтерські будні: збирали ліки й продукти, пакували коробки й готували допомогу до відправлення.</p>
       </div>
       <div class="pol-wall">
-        <figure class="pol" style="transform:rotate(-6deg)"><img src="img/17fdf1ba41.jpg" alt=""><p>«Покрова АМП» у Фано</p></figure>
-        <figure class="pol" style="transform:rotate(3deg);margin-top:16px"><img src="img/f8cd3ae75e.jpg" alt=""><p>Роковини вторгнення</p></figure>
-        <figure class="pol" style="transform:rotate(-3deg)"><img src="img/fefc57321d.jpg" alt=""><p>Storia di una foglia</p></figure>
-        <figure class="pol" style="transform:rotate(5deg);margin-top:-12px"><img src="img/b1341d766c.jpg" alt=""><p>Festa dei popoli</p></figure>
-        <figure class="pol" style="transform:rotate(-4deg)"><img src="img/c7ce61fc27.jpg" alt=""><p>Збір ліків і продуктів</p></figure>
-        <figure class="pol" style="transform:rotate(4deg);margin-top:-8px"><img src="img/436b535d92.jpg" alt=""><p>Різдвяна зустріч</p></figure>
+        <figure class="pol" style="transform:rotate(-6deg)"><img loading="lazy" decoding="async" srcset="img/s/17fdf1ba41.jpg 480w, img/17fdf1ba41.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/17fdf1ba41.jpg" alt=""><p>«Покрова АМП» у Фано</p></figure>
+        <figure class="pol" style="transform:rotate(3deg);margin-top:16px"><img loading="lazy" decoding="async" srcset="img/s/f8cd3ae75e.jpg 480w, img/f8cd3ae75e.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/f8cd3ae75e.jpg" alt=""><p>Роковини вторгнення</p></figure>
+        <figure class="pol" style="transform:rotate(-3deg)"><img loading="lazy" decoding="async" srcset="img/s/fefc57321d.jpg 480w, img/fefc57321d.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/fefc57321d.jpg" alt=""><p>Storia di una foglia</p></figure>
+        <figure class="pol" style="transform:rotate(5deg);margin-top:-12px"><img loading="lazy" decoding="async" srcset="img/s/b1341d766c.jpg 480w, img/b1341d766c.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/b1341d766c.jpg" alt=""><p>Festa dei popoli</p></figure>
+        <figure class="pol" style="transform:rotate(-4deg)"><img loading="lazy" decoding="async" srcset="img/s/c7ce61fc27.jpg 480w, img/c7ce61fc27.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/c7ce61fc27.jpg" alt=""><p>Збір ліків і продуктів</p></figure>
+        <figure class="pol" style="transform:rotate(4deg);margin-top:-8px"><img loading="lazy" decoding="async" srcset="img/s/436b535d92.jpg 480w, img/436b535d92.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/436b535d92.jpg" alt=""><p>Різдвяна зустріч</p></figure>
       </div>
       <div class="pol-dots" id="polDots"></div>
     </div>
@@ -619,13 +669,13 @@ body.lock{overflow:hidden}
   <section class="sec milk" style="padding-top:0">
     <div class="wrap">
       <article class="founder-card">
-        <div class="ph"><img src="img/a47f192515.jpg" alt="Тетяна Микитюк у вишиванці"></div>
+        <div class="ph"><img loading="lazy" decoding="async" srcset="img/s/a47f192515.jpg 480w, img/a47f192515.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/a47f192515.jpg" alt="Тетяна Микитюк у вишиванці"></div>
         <div class="t">
           <h2 class="h2">Тетяна Микитюк</h2>
           <p class="role">Засновниця громади у Фано</p>
           <p class="quote">«Україна – в моєму серці, де б я не була.»</p>
-          <p>Тетяна родом із Коломиї, що на Прикарпатті. Уже багато років вона живе й працює в Італії. З 2014 року Тетяна волонтерить: підтримує українських захисників і допомагає тим, хто потребує підтримки. З роками волонтерство стало важливою частиною її життя.</p>
-          <p>У лютому 2022 року Тетяна заснувала українську громаду у Фано. Разом з іншими волонтерами вона збирає й передає допомогу в Україну, підтримує дітей та організовує події, на яких мешканці Фано знайомляться з українськими традиціями.</p>
+          <p>Тетяна родом із Коломиї, що на Прикарпатті. Уже багато років вона живе й працює в Італії. З 2014 року волонтерить: підтримує українських захисників і тих, хто опинився в біді.</p>
+          <p>У лютому 2022 року Тетяна заснувала українську громаду у Фано.</p>
         </div>
         <img class="orn" src="img/ornament.svg" alt="" aria-hidden="true">
       </article>
@@ -659,7 +709,7 @@ body.lock{overflow:hidden}
       <div class="join" id="napysaty">
         <div class="t">
           <h2 class="h2">Як долучитися</h2>
-          <p>Хочете допомогти зі зборами, долучитися до громади чи запропонувати співпрацю? Напишіть нам – лист прийде на пошту громади, і ми відповімо вам на email.</p>
+          <p>Хочете допомогти зі зборами, долучитися до громади чи запропонувати співпрацю? Напишіть нам.</p>
         </div>
         <a class="btn ghost fb-btn" data-fb hidden target="_blank" rel="noopener">Відкрити сторінку у Facebook ↗</a>
         <div class="side">
@@ -680,16 +730,17 @@ body.lock{overflow:hidden}
         <p class="crumbs"><a href="#home">Головна</a> / Довідник Фано</p>
         <h1 class="h1">Довідник Фано</h1>
         <p class="lead">Фано – місто на узбережжі Адріатичного моря в регіоні Марке. Тут зібрали адреси установ, контакти й посилання на офіційні сайти, які можуть бути корисними.</p>
+        <a class="sos-link" href="#dovidnyk-terminovo"><span class="n">112</span><span>Термінові контакти →</span></a>
         <span class="pill"><span class="dot" style="margin:0"></span>Перевірено 22 листопада 2026. Години прийому можуть змінюватися.</span>
       </div>
-      <div class="ph"><img src="img/7bb49001d1.jpg" alt="Арка Августа в мальованій техніці"></div>
+      <div class="ph"><img loading="lazy" decoding="async" srcset="img/s/7bb49001d1.jpg 480w, img/7bb49001d1.jpg 1000w" sizes="(max-width:600px) 100vw, 50vw" src="img/7bb49001d1.jpg" alt="Арка Августа в мальованій техніці"></div>
     </div>
   </div>
   <div class="wrap">
     <div class="dir-body">
       <div class="tabs" role="tablist" aria-label="Розділи довідника" id="tabs"><span class="cap">Розділи довідника</span></div>
       <div>
-        <div class="panel" id="panel" role="tabpanel"></div>
+        <div class="panel" id="panel" role="tabpanel" tabindex="0"></div>
         <div class="ask">
           <div><p class="card-t">Не знайшли відповіді?</p><p class="muted">Напишіть нам – підкажемо, куди звернутися.</p></div>
           <button class="btn" data-open="contact">Написати нам</button>
@@ -730,9 +781,9 @@ body.lock{overflow:hidden}
     <div class="top">
       <div><a href="#home" class="logo"><img src="img/logo-heart.svg" alt=""><span>Comunità<br>ucraina<br>di Fano</span></a><p class="muted" style="margin-top:20px">З Україною у серці · Con l’Ucraina nel cuore</p></div>
       <div><h4>Сторінки</h4><ul><li><a href="#diialnist">Діяльність</a></li><li><a href="#pro-hromadu">Про громаду</a></li><li><a href="#dovidnyk">Довідник Фано</a></li><li><a href="#fotoarkhiv">Фотоархів</a></li></ul></div>
-      <div><h4>Контакти</h4><ul><li data-email></li><li data-fb hidden><a class="link" data-fb-link target="_blank" rel="noopener">Facebook ↗</a></li><li class="muted">Фано, Марке</li></ul></div>
+      <div><h4>Контакти</h4><ul><li data-email hidden><a class="link" data-email-link></a></li><li data-fb hidden><a class="link" data-fb-link target="_blank" rel="noopener">Facebook ↗</a></li><li class="muted">Фано, Марке</li></ul></div>
     </div>
-    <div class="bot"><span>© 2026 Громада українців міста Фано</span><span>Політика приватності</span></div>
+    <div class="bot"><span>© 2026 Громада українців міста Фано</span><a data-privacy hidden>Політика приватності</a></div>
   </div>
 </footer>
 
@@ -760,7 +811,7 @@ body.lock{overflow:hidden}
 <div class="ov" id="contactOv" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
   <div class="win narrow">
     <div class="whead">
-      <div style="display:flex;flex-direction:column;gap:12px"><h2 class="h2" id="contactTitle">Написати нам</h2><p class="muted">Хочете допомогти зі зборами, долучитися до громади чи запропонувати співпрацю? Лист прийде на пошту громади, відповімо вам на email.</p></div>
+      <div style="display:flex;flex-direction:column;gap:12px"><h2 class="h2" id="contactTitle">Написати нам</h2><p class="muted">Хочете допомогти зі зборами, долучитися до громади чи запропонувати співпрацю? Напишіть нам.</p></div>
       <button class="x" data-close aria-label="Закрити">×</button>
     </div>
     <div data-form="modal"></div>
@@ -769,99 +820,125 @@ body.lock{overflow:hidden}
 <div class="toast" id="toast" role="status"><b>✓</b>Адресу скопійовано</div>
 
 <script>
-// ===== Налаштування: замініть на справжню пошту громади =====
-const EMAIL = "[email громади]";
+// ===== Налаштування сайту – єдине місце для контактів =====
+// Заповнюйте лише підтвердженими даними. Порожнє значення ховає відповідні кнопки й посилання.
+const SITE = {
+  email: "",          // пошта громади, напр. "hromada.fano@gmail.com"
+  facebook: "",       // повна адреса сторінки громади у Facebook
+  formEndpoint: "",   // адреса Formspree або іншого сервісу форм, прив'язаного до пошти громади
+  privacyUrl: ""      // адреса погодженої політики приватності
+};
 
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const img = h => `img/${h}.jpg`;
-$$('[data-email]').forEach(e => e.textContent = EMAIL);
+const imgS = h => `img/s/${h}.jpg`;
+if(SITE.email){$$('[data-email]').forEach(e=>{e.hidden=false;const a=e.querySelector('[data-email-link]');if(a){a.href='mailto:'+SITE.email;a.textContent=SITE.email;}});}
+if(SITE.privacyUrl){$$('[data-privacy]').forEach(a=>{a.hidden=false;a.href=SITE.privacyUrl;});}
 
 // ---------- thanks ----------
+// Один впорядкований список: і для секції, і для переглядача (1 / 9 = перший рядок)
 const THANKS = [
- ['8738697a5c','Благодійний фонд «101 варіант»','Тетяні Микитюк і громаді українців Фано','За організацію та підтримку волонтерської діяльності'],
- ['25be6f3919','Одеський інклюзивно-ресурсний центр № 1','Громаді українців міста Фано','За гуманітарну допомогу дітям з особливими освітніми потребами'],
- ['bbe3a035a5','Нововоронцовська селищна військова адміністрація','Тетяні Микитюк','За підтримку й допомогу жителям Нововоронцовщини · 2023'],
- ['0820c7676f','Смизька селищна рада','Громаді українців міста Фано','За постійну допомогу захисникам України, дітям і переселенцям · 2023'],
- ['31a1f94951','Фестиваль «Барви писанки»','Тетяні Микитюк і всім небайдужим українцям Фано','Лист-подяка за допомогу й підтримку'],
- ['0112b03eaf','ГО «Харків Назавжди»','Громаді українців міста Фано','За допомогу захисникам, дітям-сиротам, переселенцям · 2023'],
- ['00d7353486','Рівненський державний гуманітарний університет','Тетяні Микитюк','За організацію та підтримку волонтерської діяльності'],
- ['575ebff5db','Рівненський державний гуманітарний університет','Мешканцям, підприємствам і організаціям Фано, Пезаро, Апекьо, Сан-Костанцо','Gratitudine – за організацію та підтримку волонтерства'],
- ['d6c8e727bd','Рівненський державний гуманітарний університет','Організації AUSER Apecchio','Gratitudine – за організацію та підтримку волонтерства']];
+ {doc:'0820c7676f',org:'Смизька селищна рада',cap:'Громаді Фано за допомогу захисникам, дітям-сиротам і переселенцям',year:'2023'},
+ {doc:'25be6f3919',org:'Одеський інклюзивно-ресурсний центр № 1',cap:'Громаді Фано за гуманітарну допомогу дітям з особливими освітніми потребами',year:''},
+ {doc:'bbe3a035a5',org:'Нововоронцовська селищна військова адміністрація',cap:'Тетяні Микитюк за гуманітарну допомогу жителям Нововоронцовщини',year:'2023'},
+ {doc:'8738697a5c',org:'Благодійний фонд «101 варіант»',cap:'Тетяні Микитюк і громаді Фано за організацію та підтримку волонтерської діяльності',year:''},
+ {doc:'31a1f94951',org:'Фестиваль «Барви писанки»',cap:'Тетяні Микитюк за участь у фестивалі · Афіни, 17 травня',year:'2023'},
+ {doc:'0112b03eaf',org:'ГО «Харків Назавжди»',cap:'Громаді Фано за допомогу захисникам, дітям-сиротам і переселенцям',year:'2023'},
+ {doc:'00d7353486',org:'Рівненський державний гуманітарний університет',cap:'Тетяні Микитюк за організацію та підтримку волонтерської діяльності',year:''},
+ {doc:'575ebff5db',org:'Рівненський державний гуманітарний університет',cap:'Мешканцям, підприємствам і організаціям Фано, Пезаро, Апеккьо й Сан-Костанцо за підтримку волонтерства',year:''},
+ {doc:'d6c8e727bd',org:'Рівненський державний гуманітарний університет',cap:'Організації AUSER Apecchio за підтримку волонтерства',year:''}];
 const thx = $('#thx');
-const THX=[
- [3,'Смизька селищна рада','Громаді Фано за допомогу захисникам, дітям і переселенцям','2023'],
- [1,'Одеський інклюзивно-ресурсний центр № 1','Громаді Фано за допомогу дітям з особливими освітніми потребами',''],
- [2,'Нововоронцовська селищна військова адміністрація','Тетяні Микитюк за гуманітарну допомогу жителям громади','2023'],
- [0,'Благодійний фонд «101 варіант»','Тетяні Микитюк і громаді Фано за підтримку волонтерської діяльності',''],
- [4,'Фестиваль «Барви писанки»','Тетяні Микитюк і українцям Фано за допомогу й підтримку',''],
- [5,'ГО «Харків Назавжди»','Громаді Фано за допомогу захисникам, дітям-сиротам і переселенцям','2023'],
- [6,'Рівненський державний гуманітарний університет','Тетяні Микитюк за підтримку волонтерської діяльності',''],
- [7,'Рівненський державний гуманітарний університет','Мешканцям і організаціям Фано, Пезаро, Апекьо, Сан-Костанцо за підтримку волонтерства',''],
- [8,'Рівненський державний гуманітарний університет','Організації AUSER Apecchio за підтримку волонтерства','']];
-thx.innerHTML=THX.map(([i,o,c,y])=>`<li class="thx-row"><div class="thx-b"><p class="thx-org">${o}</p><p class="thx-cap">${c}${y?` · ${y}`:''}</p></div><button class="link thx-doc" type="button" data-photo="thanks:${i}">Переглянути подяку<span class="sr"> від: ${o}</span></button></li>`).join('');
-$('#thxMore').onclick=e=>{const b=e.currentTarget,open=thx.classList.toggle('all');b.textContent=open?'Згорнути список':`Показати всі ${THX.length} подяк`;b.setAttribute('aria-expanded',open);if(!open)$('.thx-wrap').scrollIntoView({block:'start'});};
+thx.innerHTML=THANKS.map((t,i)=>`<li class="thx-row"><div class="thx-b"><p class="thx-org">${t.org}</p><p class="thx-cap">${t.cap}${t.year?` · ${t.year}`:''}</p></div><button class="link thx-doc" type="button" data-photo="thanks:${i}">Переглянути подяку<span class="sr"> від: ${t.org}</span></button></li>`).join('');
+$('#thxMore').textContent=`Показати всі ${THANKS.length} подяк`;
+$('#thxMore').onclick=e=>{const b=e.currentTarget,open=thx.classList.toggle('all');b.textContent=open?'Згорнути список':`Показати всі ${THANKS.length} подяк`;b.setAttribute('aria-expanded',open);if(open){const r=thx.children[3];r&&r.querySelector('button').focus({preventScroll:true});}else $('.thx-wrap').scrollIntoView({block:'start'});};
 function thxState(){}
 
 // ---------- albums ----------
 const ALBUMS = [
  {id:'pokrova-amp-fano',tag:'Спорт',year:2026,title:'«Покрова АМП» у Фано',date:'Жовтень 2026',place:'Стадіон Raffaele Mancini, Фано',desc:'Громада вболівала за команду «Покрова АМП» зі Львова на матчах Ліги чемпіонів з ампфутболу у Фано.',photos:['17fdf1ba41','44920b7450','847240aadc','4ea1c04dc4','95b0f044f0','e260481788','221a7313d8','0d3d4db694']},
  {id:'rokovyny-2026',tag:'Пам’ять',year:2026,title:'Четверті роковини повномасштабного вторгнення',date:'Лютий 2026',place:'Фано',desc:'Громада разом із мером Фано вшанувала пам’ять загиблих і висловила підтримку Україні.',photos:['f8cd3ae75e']},
- {id:'festa-dei-popoli',tag:'Культура',year:2024,title:'Festa dei popoli',date:'[дата]',place:'Фано',desc:'Український намет, вишиванки й майстер-клас із плетіння вінків і браслетів на святі народів.',photos:['b1341d766c','992df1518e','97f4d822d6']},
- {id:'zbory-zsu',tag:'Допомога',year:2026,title:'Збори для ЗСУ',date:'[дата]',place:'Фано',desc:'Збір ліків і медичних виробів для українських захисників і захисниць.',photos:['cb83ec1faa','3961ae706c','df914e1eb2','5b4fe5422b','a882defb8a']},
- {id:'zbir-likiv',tag:'Допомога',year:2025,title:'Збір ліків і продуктів',date:'[дата]',place:'Фано',desc:'Волонтери громади щороку долучаються до Giornata di Raccolta del Farmaco і Colletta Alimentare.',photos:['c7ce61fc27','b7133f60ed','ea24af91e8']},
- {id:'rizdvo',tag:'Культура',year:2025,title:'Різдвяна зустріч громади',date:'[дата]',place:'Фано',desc:'Різдвяна зустріч біля вертепу.',photos:['436b535d92']},
+ {id:'festa-dei-popoli',tag:'Культура',year:2024,title:'Festa dei popoli',date:'2024',place:'Фано',desc:'Український намет, вишиванки й майстер-клас із плетіння вінків і браслетів на святі народів.',photos:['b1341d766c','992df1518e','97f4d822d6']},
+ {id:'zbory-zsu',tag:'Допомога',year:2026,title:'Збори для ЗСУ',date:'2026',place:'Фано',desc:'Збір ліків і медичних виробів для українських захисників і захисниць.',photos:['cb83ec1faa','3961ae706c','df914e1eb2','5b4fe5422b','a882defb8a']},
+ {id:'zbir-likiv',tag:'Допомога',year:2025,title:'Збір ліків і продуктів',date:'2025',place:'Фано',desc:'Волонтери громади щороку долучаються до Giornata di Raccolta del Farmaco і Colletta Alimentare.',photos:['c7ce61fc27','b7133f60ed','ea24af91e8']},
+ {id:'rizdvo',tag:'Культура',year:2025,title:'Різдвяна зустріч громади',date:'2025',place:'Фано',desc:'Різдвяна зустріч біля вертепу.',photos:['436b535d92']},
  {id:'pagine',tag:'Культура',year:2024,title:'Pagine del diario ucraino',date:'Березень 2024',place:'MeMo, Фано',desc:'Фотовиставка в медіатеці MeMo.',photos:[]},
  {id:'storia-di-una-foglia',tag:'Культура',year:2023,title:'Storia di una foglia',date:'Травень 2023',place:'Mediateca Montanari (MeMo)',desc:'Виставка робіт із творчої майстерні для українських дітей, яких прийняли у Фано, і відкриття української книжкової полиці.',photos:['fefc57321d','89a0ac0684','5a6d49ed77']},
  {id:'zasnuvannia',tag:'Громада',year:2022,title:'Заснування громади',date:'Лютий 2022',place:'Фано',desc:'Перші зустрічі громади у Фано.',photos:['d436e84ee8']}];
+// Альбом без фото (поки немає затвердженої обкладинки й матеріалів) не показуємо публічно
+const PUB=ALBUMS.filter(a=>a.photos.length);
 const TAGS=['Усі','Культура','Допомога','Пам’ять','Спорт','Громада'];
 let fTag='Усі', fYear='all';
 $('#chips').innerHTML=TAGS.map(t=>`<button class="chip" aria-pressed="${t===fTag}" data-tag="${t}">${t}</button>`).join('');
-const years=[...new Set(ALBUMS.map(a=>a.year))].sort((a,b)=>b-a);
+const years=[...new Set(PUB.map(a=>a.year))].sort((a,b)=>b-a);
 $('#year').innerHTML='<option value="all">Усі роки</option>'+years.map(y=>`<option>${y}</option>`).join('');
 function plural(n){const a=n%10,b=n%100;return a===1&&b!==11?'альбом':(a>=2&&a<=4&&(b<10||b>=20)?'альбоми':'альбомів');}
-function renderAlbums(){const list=ALBUMS.filter(a=>(fTag==='Усі'||a.tag===fTag)&&(fYear==='all'||a.year==fYear));
+function renderAlbums(){const list=PUB.filter(a=>(fTag==='Усі'||a.tag===fTag)&&(fYear==='all'||a.year==fYear));
  $('#acount').textContent=`${list.length} ${plural(list.length)}`;
  $$('.chip[data-tag]').forEach(c=>c.setAttribute('aria-pressed',c.dataset.tag===fTag));
- $('#agrid').innerHTML=list.length?list.map(a=>`<button class="album" data-album="${a.id}"><div class="cv">${a.photos[0]?`<img src="${img(a.photos[0])}" alt="" loading="lazy">`:''}<span class="tg">${a.tag}</span></div><div class="tx"><span class="card-t">${a.title}</span><span class="small muted">${a.date} · ${a.place} · ${a.photos.length||'[N]'} фото</span></div></button>`).join(''):'<p class="empty">За цими фільтрами альбомів немає.</p>';}
+ $('#agrid').innerHTML=list.length?list.map(a=>`<a class="album" href="#fotoarkhiv/${a.id}" data-album="${a.id}"><div class="cv"><img src="${imgS(a.photos[0])}" alt="" loading="lazy" decoding="async"><span class="tg">${a.tag}</span></div><div class="tx"><span class="card-t">${a.title}</span><span class="small muted">${a.date} · ${a.place} · ${a.photos.length} фото</span></div></a>`).join(''):'<div class="empty"><p>За цими фільтрами альбомів немає.</p><button class="btn soft" type="button" data-reset>Скинути фільтри</button></div>';}
 $('#chips').onclick=e=>{const b=e.target.closest('[data-tag]');if(!b)return;fTag=b.dataset.tag;renderAlbums();};
 $('#year').onchange=e=>{fYear=e.target.value;renderAlbums();};
 renderAlbums();
 
 // gallery stories on home
 const STORIES=[['festa-dei-popoli','Festa dei popoli','Український намет і зустріч із гостями фестивалю.','Переглянути альбом'],['storia-di-una-foglia','Виставка в MeMo','Роботи українських дітей у міській медіатеці.','Переглянути альбом'],['zbir-likiv','Волонтерські будні','Збір продуктів і пакування допомоги для України.','Переглянути альбом']];
-$('#stories').innerHTML=STORIES.map(([id,t,d,l])=>{const a=ALBUMS.find(x=>x.id===id);const p=a.photos;return `<div class="story"><div class="t"><h3 class="h2" style="font-size:32px;line-height:40px">${t}</h3><p class="body-l">${d}</p><button class="link story-link" type="button" data-album="${id}">${l}<span class="sr">: ${t}</span></button></div><button class="big ph" data-photo="${id}:0" aria-label="Відкрити фото"><img src="${img(p[0])}" alt=""></button><div class="smalls">${p.slice(1,3).map((h,i)=>`<button class="ph" data-photo="${id}:${i+1}" aria-label="Відкрити фото"><img src="${img(h)}" alt=""></button>`).join('')}</div></div>`}).join('');
+$('#stories').innerHTML=STORIES.map(([id,t,d,l])=>{const a=ALBUMS.find(x=>x.id===id);const p=a.photos;return `<div class="story"><div class="t"><h3 class="h2" style="font-size:32px;line-height:40px">${t}</h3><p class="body-l">${d}</p><button class="link story-link" type="button" data-album="${id}">${l}<span class="sr">: ${t}</span></button></div><button class="big ph" data-photo="${id}:0" aria-label="Відкрити фото: ${t}"><img src="${img(p[0])}" srcset="${imgS(p[0])} 480w, ${img(p[0])} 1000w" sizes="(max-width:600px) 100vw, 50vw" alt="" loading="lazy" decoding="async"></button><div class="smalls">${p.slice(1,3).map((h,i)=>`<button class="ph" data-photo="${id}:${i+1}" aria-label="Відкрити фото: ${t}"><img src="${imgS(h)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div></div>`}).join('');
 
 // ---------- modals ----------
-let lastFocus=null;
-function openOv(el){lastFocus=document.activeElement;el.classList.add('open');document.body.classList.add('lock');const f=el.querySelector('button,a');f&&f.focus();}
-function closeOv(el){el.classList.remove('open');if(!$$('.ov.open,.lb.open').length)document.body.classList.remove('lock');lastFocus&&lastFocus.focus();}
-let cur=null;
-function openAlbum(id){const a=ALBUMS.find(x=>x.id===id);if(!a)return;cur=a;
- $('#albumTag').textContent=a.tag;$('#albumTitle').textContent=a.title;$('#albumDate').textContent=a.date;$('#albumPlace').textContent=a.place;$('#albumN').textContent=a.photos.length||'—';$('#albumDesc').textContent=a.desc;
- $('#albumGrid').innerHTML=a.photos.length?a.photos.map((h,i)=>`<button data-photo="${a.id}:${i}" aria-label="Фото ${i+1}"><img src="${img(h)}" alt="" loading="lazy"></button>`).join(''):'<p class="muted">Фото для цього альбому ще додаються.</p>';
- openOv($('#albumOv'));}
+// Стек відкритих діалогів: фокус лишається в останньому, після закриття повертається на кнопку, що його відкрила
+const stack=[];
+const FOCUSABLE='a[href],button:not([disabled]),input,textarea,select,[tabindex]:not([tabindex="-1"])';
+function focusables(el){return [...el.querySelectorAll(FOCUSABLE)].filter(x=>!x.hidden&&x.offsetParent!==null);}
+function openDlg(el,opener,first){stack.push({el,opener:opener||document.activeElement});el.classList.add('open');document.body.classList.add('lock');
+ const f=first||focusables(el)[0];f&&f.focus();}
+function closeDlg(el){const i=stack.findIndex(x=>x.el===el);if(i<0)return;const {opener}=stack.splice(i,1)[0];el.classList.remove('open');
+ if(!stack.length)document.body.classList.remove('lock');const t=opener&&document.contains(opener)&&opener.offsetParent!==null?opener:($('#burger').offsetParent?$('#burger'):null);t&&t.focus({preventScroll:true});}
+const openOv=(el,opener)=>openDlg(el,opener);
+const closeOv=el=>{if(el.id==='albumOv'){closeAlbum();return;}closeDlg(el);};
+document.addEventListener('keydown',e=>{if(e.key!=='Tab'||!stack.length)return;const top=stack[stack.length-1].el;const f=focusables(top);if(!f.length)return;
+ const a=f[0],z=f[f.length-1];if(e.shiftKey&&(document.activeElement===a||!top.contains(document.activeElement))){e.preventDefault();z.focus();}
+ else if(!e.shiftKey&&(document.activeElement===z||!top.contains(document.activeElement))){e.preventDefault();a.focus();}});
+
+// альбоми мають пряму адресу #fotoarkhiv/<id>; кнопка «Назад» у браузері закриває альбом
+let cur=null,albumBack=null;
+function fillAlbum(a){cur=a;
+ $('#albumTag').textContent=a.tag;$('#albumTitle').textContent=a.title;$('#albumDate').textContent=a.date;$('#albumPlace').textContent=a.place;$('#albumN').textContent=a.photos.length;$('#albumDesc').textContent=a.desc;
+ $('#albumGrid').innerHTML=a.photos.map((h,i)=>`<button data-photo="${a.id}:${i}" aria-label="Фото ${i+1} з ${a.photos.length}"><img src="${imgS(h)}" alt="" loading="lazy" decoding="async"></button>`).join('');}
+function openAlbum(id,opener){const a=PUB.find(x=>x.id===id);if(!a)return;
+ albumBack={hash:location.hash,y:scrollY};
+ location.hash='fotoarkhiv/'+id; // route() відкриє діалог
+ pendingOpener=opener||document.activeElement;}
+let pendingOpener=null,albumFromUrl=false;
+function showAlbumDlg(id){const a=PUB.find(x=>x.id===id);if(!a)return false;fillAlbum(a);
+ if(!$('#albumOv').classList.contains('open'))openDlg($('#albumOv'),pendingOpener);pendingOpener=null;return true;}
+function closeAlbum(){if(!$('#albumOv').classList.contains('open'))return;
+ if(albumBack){history.back();}else{history.replaceState(null,'','#fotoarkhiv');closeDlg($('#albumOv'));route();}}
+
 let lbA=null,lbI=0;
-function openLb(id,i){lbA=id==='thanks'?{title:'Подяки та відзнаки',date:'',photos:THANKS.map(t=>t[0])}:ALBUMS.find(x=>x.id===id);lbI=+i;showLb();$('#lb').classList.add('open');document.body.classList.add('lock');$('#lbClose').focus();}
-function showLb(){$('#lbImg').src=img(lbA.photos[lbI]);$('#lbCount').textContent=`${lbI+1} / ${lbA.photos.length}`;$('#lbCap').textContent=lbA.id?`${lbA.title} · ${lbA.date}`:(THANKS[lbI][1]);$('#lbPrev').disabled=lbI===0;$('#lbNext').disabled=lbI===lbA.photos.length-1;}
+function lbList(id){return id==='thanks'?{id:null,title:'Подяки та відзнаки',photos:THANKS.map(t=>t.doc)}:PUB.find(x=>x.id===id);}
+function openLb(id,i,opener){lbA=lbList(id);if(!lbA)return;lbI=+i;showLb();openDlg($('#lb'),opener,$('#lbClose'));}
+function showLb(){$('#lbImg').src=img(lbA.photos[lbI]);$('#lbImg').alt=lbA.id?`${lbA.title}, фото ${lbI+1}`:`Подяка: ${THANKS[lbI].org}`;
+ $('#lbCount').textContent=`${lbI+1} / ${lbA.photos.length}`;$('#lbCap').textContent=lbA.id?`${lbA.title} · ${lbA.date}`:`${THANKS[lbI].org}${THANKS[lbI].year?' · '+THANKS[lbI].year:''}`;
+ $('#lbPrev').disabled=lbI===0;$('#lbNext').disabled=lbI===lbA.photos.length-1;}
 const lbGo=d=>{const n=lbI+d;if(n>=0&&n<lbA.photos.length){lbI=n;showLb();}};
-$('#lbPrev').onclick=()=>lbGo(-1);$('#lbNext').onclick=()=>lbGo(1);$('#lbClose').onclick=()=>{$('#lb').classList.remove('open');if(!$$('.ov.open').length)document.body.classList.remove('lock');};
+$('#lbPrev').onclick=()=>lbGo(-1);$('#lbNext').onclick=()=>lbGo(1);$('#lbClose').onclick=()=>closeDlg($('#lb'));
 let tx0=null;$('#lb').addEventListener('touchstart',e=>tx0=e.touches[0].clientX,{passive:true});$('#lb').addEventListener('touchend',e=>{if(tx0===null)return;const dx=e.changedTouches[0].clientX-tx0;if(Math.abs(dx)>40)lbGo(dx<0?1:-1);tx0=null;});
 
 // ---------- contact form ----------
-// FORM_ENDPOINT: адреса сервісу форм (напр. Web3Forms або Formspree), прив'язаного до пошти Тетяни. Поки порожньо – форма працює в демо-режимі.
-const FORM_ENDPOINT = "";
-// Посилання на сторінку громади у Facebook. Поки порожньо – усі кнопки Facebook сховані.
-const FACEBOOK_URL = "";
-if(FACEBOOK_URL){document.querySelectorAll('[data-fb]').forEach(el=>{el.hidden=false;const a=el.matches('a')?el:el.querySelector('[data-fb-link]');if(a)a.href=FACEBOOK_URL;});}
-function formHTML(id){return `<form class="form" novalidate data-id="${id}">
+// Надсилання працює лише з SITE.formEndpoint. Без нього форма не імітує відправлення, а показує перевірений канал зв'язку.
+if(SITE.facebook){$$('[data-fb]').forEach(el=>{el.hidden=false;const a=el.matches('a')?el:el.querySelector('[data-fb-link]');if(a)a.href=SITE.facebook;});}
+function fallbackHTML(){
+ const ch=SITE.email?`<a class="btn" href="mailto:${SITE.email}">Написати на ${SITE.email}</a>`:(SITE.facebook?`<a class="btn" href="${SITE.facebook}" target="_blank" rel="noopener">Написати у Facebook ↗</a>`:'');
+ return `<div class="form-off" role="status"><p class="card-t">Форма запрацює найближчим часом</p><p class="muted">${ch?'Поки що напишіть нам напряму.':'Контакти громади з’являться тут, щойно їх підтвердять.'}</p>${ch}</div>`;}
+function formHTML(id){if(!SITE.formEndpoint)return fallbackHTML();return `<form class="form" novalidate data-id="${id}">
  <div class="fld"><label for="${id}-name">Ім’я</label><input id="${id}-name" name="name" autocomplete="name" placeholder="Олена"><p class="ferr" hidden></p></div>
  <div class="fld"><label for="${id}-email">Email для відповіді</label><input id="${id}-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="olena@gmail.com"><p class="ferr" hidden></p></div>
  <div class="fld"><label for="${id}-msg">Повідомлення</label><textarea id="${id}-msg" name="message" rows="4" placeholder="Хочу допомогти з наступним збором"></textarea><p class="ferr" hidden></p></div>
- <p class="fnote">Надсилаючи, ви погоджуєтеся з <a href="#" class="link">політикою приватності</a>.</p>
- <p class="fail" hidden>${FORM_ENDPOINT?'Не вдалося надіслати. Спробуйте ще раз за хвилину.':'Форму ще не підключено до пошти громади, тому повідомлення не надіслано.'}</p>
+ ${SITE.privacyUrl?`<p class="fnote">Надсилаючи, ви погоджуєтеся з <a href="${SITE.privacyUrl}" class="link" target="_blank" rel="noopener">політикою приватності</a>.</p>`:''}
+ <p class="fail" hidden role="alert">Не вдалося надіслати. Спробуйте ще раз за хвилину${SITE.email?` або напишіть на <a class="link" href="mailto:${SITE.email}">${SITE.email}</a>`:''}.</p>
  <button class="btn" type="submit">Надіслати</button>
 </form>
-<div class="sent" hidden><span class="ok">✓</span><p class="card-t">Повідомлення надіслано</p><p class="muted">Відповімо на <b data-sent-to></b>. Зазвичай – протягом кількох днів.</p><button class="link" type="button" data-again>Написати ще одне</button></div>`;}
+<div class="sent" hidden role="status" tabindex="-1"><span class="ok">✓</span><p class="card-t">Повідомлення надіслано</p><p class="muted">Відповімо на <b data-sent-to></b>. Зазвичай – протягом кількох днів.</p><button class="link" type="button" data-again>Написати ще одне</button></div>`;}
 $$('[data-form]').forEach(w=>w.innerHTML=formHTML('f-'+w.dataset.form));
 const ERR={name:'Вкажіть, як до вас звертатися',email:'Вкажіть email, щоб ми могли відповісти',emailBad:'Схоже, в адресі пропущено @ або домен',message:'Напишіть кілька слів повідомлення'};
 function setErr(f,msg){const w=f.closest('.fld'),p=w.querySelector('.ferr');w.classList.toggle('err',!!msg);p.hidden=!msg;p.textContent=msg||'';f.setAttribute('aria-invalid',!!msg);if(msg){p.id=f.id+'-err';f.setAttribute('aria-describedby',p.id);}else f.removeAttribute('aria-describedby');}
@@ -870,12 +947,12 @@ document.addEventListener('input',e=>{const f=e.target;if(f.closest('.form')&&f.
 document.addEventListener('submit',async e=>{const form=e.target.closest('.form');if(!form)return;e.preventDefault();
  const fields=[...form.querySelectorAll('input[name=name],input[name=email],textarea')];let first=null;
  fields.forEach(f=>{const m=check(f);setErr(f,m);if(m&&!first)first=f;});if(first){first.focus();return;}
- const btn=form.querySelector('[type=submit]');btn.disabled=true;btn.textContent='Надсилаємо…';form.querySelector('.fail').hidden=true;
+ const btn=form.querySelector('[type=submit]');btn.disabled=true;btn.setAttribute('aria-busy','true');btn.textContent='Надсилаємо…';form.querySelector('.fail').hidden=true;
  const data=Object.fromEntries(new FormData(form));let ok=true;
- try{if(FORM_ENDPOINT){const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({...data,subject:'Повідомлення з сайту громади'})});ok=r.ok;}else{ok=false;}}catch(_){ok=false;}
- btn.disabled=false;btn.textContent='Надіслати';
+ try{if(SITE.formEndpoint){const r=await fetch(SITE.formEndpoint,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({...data,subject:'Повідомлення з сайту громади'})});ok=r.ok;}else{ok=false;}}catch(_){ok=false;}
+ btn.disabled=false;btn.removeAttribute('aria-busy');btn.textContent='Надіслати';
  if(!ok){form.querySelector('.fail').hidden=false;return;}
- const sent=form.nextElementSibling;sent.querySelector('[data-sent-to]').textContent=data.email;form.hidden=true;sent.hidden=false;form.reset();});
+ const sent=form.nextElementSibling;sent.querySelector('[data-sent-to]').textContent=data.email;form.hidden=true;sent.hidden=false;sent.focus();form.reset();});
 document.addEventListener('click',e=>{const a=e.target.closest('[data-again]');if(!a)return;const sent=a.closest('.sent');sent.hidden=true;sent.previousElementSibling.hidden=false;});
 
 // ---------- polaroid pager (mobile) ----------
@@ -886,15 +963,16 @@ pw.addEventListener('scroll',()=>requestAnimationFrame(polState),{passive:true})
 pd.onclick=e=>{const b=e.target.closest('[data-pol]');if(b)pw.scrollTo({left:pw.clientWidth*b.dataset.pol,behavior:'smooth'});};
 
 document.addEventListener('click',e=>{
- const o=e.target.closest('[data-open]');if(o){e.preventDefault();closeMenu();openOv($('#contactOv'));return;}
+ const o=e.target.closest('[data-open]');if(o){e.preventDefault();closeMenu();openOv($('#contactOv'),o);return;}
  const c=e.target.closest('[data-close]');if(c){closeOv(c.closest('.ov'));return;}
  if(e.target.classList.contains('ov')){closeOv(e.target);return;}
- const al=e.target.closest('[data-album]');if(al){openAlbum(al.dataset.album);return;}
- const ph=e.target.closest('[data-photo]');if(ph){const [id,i]=ph.dataset.photo.split(':');openLb(id,i);return;}
- const cp=e.target.closest('[data-copy]');if(cp){(navigator.clipboard?navigator.clipboard.writeText(EMAIL):Promise.reject()).then(toast,toast);return;}
+ const al=e.target.closest('[data-album]');if(al){e.preventDefault();openAlbum(al.dataset.album,al);return;}
+ const rs=e.target.closest('[data-reset]');if(rs){fTag='Усі';fYear='all';$('#year').value='all';renderAlbums();$('#chips .chip').focus();return;}
+ const ph=e.target.closest('[data-photo]');if(ph){const [id,i]=ph.dataset.photo.split(':');openLb(id,i,ph);return;}
+ const cp=e.target.closest('[data-copy]');if(cp){(navigator.clipboard?navigator.clipboard.writeText(SITE.email):Promise.reject()).then(toast,toast);return;}
  const f=e.target.closest('[data-filter]');if(f){fTag=f.dataset.filter;fYear='all';$('#year').value='all';renderAlbums();}
 });
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){if($('#lb').classList.contains('open'))$('#lbClose').click();else{const o=$('.ov.open');o&&closeOv(o);closeMenu();}}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){const top=stack[stack.length-1];if(top){top.el.id==='lb'?closeDlg(top.el):closeOv(top.el);}else closeMenu();}
  if($('#lb').classList.contains('open')){if(e.key==='ArrowRight')lbGo(1);if(e.key==='ArrowLeft')lbGo(-1);}});
 function toast(){const t=$('#toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800);}
 
@@ -905,52 +983,72 @@ $$('#mmenu a').forEach(a=>a.addEventListener('click',closeMenu));
 addEventListener('scroll',()=>$('#hdr').classList.toggle('scrolled',scrollY>8));
 
 // ---------- directory ----------
-const T=(v)=>`<a href="tel:${v.replace(/[^+\d]/g,'')}">${v}</a>`;
-const card=(tag,title,text,rows,soft)=>`<article class="ic${soft?' soft':''}"><span class="tag">${tag}</span><h3 class="card-t">${title}</h3>${text?`<p class="muted">${text}</p>`:''}<dl>${rows.map(([k,v])=>`<div class="kv"><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl></article>`;
+const T=v=>`<a href="tel:${v.replace(/[^+\d]/g,'')}">${v}</a>`;
+const M=v=>`<a class="eml" href="mailto:${v}">${v}</a>`;
+const MAP=a=>`<a class="ext" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a)}" target="_blank" rel="noopener">На мапі ↗</a>`;
+const SRC={
+ comune:['Comune di Fano','https://www.comune.fano.pu.it/'],
+ ade:['Agenzia delle Entrate · Webticket','https://www.agenziaentrate.gov.it/portale/web/guest/contatta/assistenza-fiscale/elimina-code-online'],
+ unica:['Unica · Ministero dell’Istruzione','https://unica.istruzione.gov.it/it/orientamento/iscrizioni']};
+// rows: [label, html]; opt: {soft, addr, actions:[[label,url]], src}
+const card=(tag,title,text,rows,opt={})=>`<article class="ic${opt.soft?' soft':''}${opt.wide?' wide':''}"><span class="tag">${tag}</span><h3 class="card-t">${title}</h3>${text?`<p class="muted">${text}</p>`:''}<dl>${rows.map(([k,v])=>`<div class="kv"><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>${opt.actions?`<div class="ic-acts">${opt.actions.map(([l,u])=>`<a class="btn soft sm" href="${u}" target="_blank" rel="noopener">${l} ↗</a>`).join('')}</div>`:''}${opt.src?`<p class="src">Офіційне джерело: <a href="${SRC[opt.src][1]}" target="_blank" rel="noopener">${SRC[opt.src][0]} ↗</a></p>`:''}</article>`;
+const A=(addr)=>addr+'<br>'+MAP(addr);
+const PEC=v=>`<span class="pec">PEC</span> ${M(v)}<br><span class="small muted">Сертифікована пошта: лише для офіційних письмових звернень, зазвичай із власної PEC-скриньки.</span>`;
 const DIR=[
  {id:'dokumenty',name:'Документи й реєстрація',intro:'ЄС продовжив тимчасовий захист для людей, які виїхали з України через війну й відповідають умовам програми, до 4 березня 2028 року. Коли й де продовжити дозвіл на перебування – у місцевій Questura.',html:`<div class="grid2">
-  ${card('Questura di Pesaro e Urbino','Дозвіл на перебування','Запис через імміграційний кол-центр: там уточнять адресу прийому й перелік документів.',[['Кол-центр для запису',T('+39 0722 313005')],['Адреса','Via Orazio Flacco, 30, 61121 Pesaro · вхід через металеві ворота'],['Прийом','Пн, вт, ср, пт 08:30–13:00 · чт 08:30–12:30 – видача дозволів'],['PEC для письмових запитів','dipps163.00P0@pecps.poliziadistato.it']])}
-  ${card('Centro Servizi Immigrati','Допомога з документами в Сант’Орсо','Документи на перебування, возз’єднання сім’ї та громадянство. Час прийому узгоджують під час запису.',[['Запис',T('+39 0721 887460')],['Коли дзвонити','Вт і пт 08:30–10:30 · чт 15:30–17:30'],['Адреса','Via Sant’Eusebio, 32, Sant’Orso, 61032 Fano'],['Email','klarita.grazhdani@comune.fano.pu.it']],true)}
-  ${card('Agenzia delle Entrate','Codice fiscale','Код присвоюють під час оформлення дозволу. Якщо його немає або в ньому помилка – форма AA4/8.',[['Зі стаціонарного',T('800 90 96 96')],['З мобільного',T('+39 06 9666 8907')],['Адреса','Via Fanella, 93, 61032 Fano'],['Прийом','За записом через Webticket']])}
-  ${card('Ufficio Anagrafe','Реєстрація місця проживання','Для першої реєстрації після переїзду напишіть і уточніть, які документи подати.',[['Телефон · 12:30–14:00',T('+39 0721 887233')+' · '+T('+39 0721 887234')],['Адреса','Via San Francesco d’Assisi, 76, 61032 Fano'],['Прийом','Пн–пт 09:00–12:30 · вт і чт 15:30–17:30'],['Email','anagrafe@comune.fano.pu.it']])}</div>`},
+  ${card('Questura di Pesaro e Urbino · відділ імміграції','Дозвіл на перебування','Запис – через імміграційний кол-центр: там уточнять адресу прийому й перелік документів.',[['Кол-центр для запису',T('+39 0722 313005')],['Телефон Questura',T('+39 0721 386111')],['Адреса',A('Via Orazio Flacco, 30, 61121 Pesaro')+'<br><span class="small muted">Вхід через металеві ворота</span>'],['Прийом','Пн, вт, ср, пт 08:30–13:00<br>Чт 08:30–12:30 – видача готових дозволів'],['Письмові запити',PEC('dipps163.00P0@pecps.poliziadistato.it')]])}
+  ${card('Centro Servizi Immigrati','Допомога з документами в Сант’Орсо','Консультації щодо документів на перебування, возз’єднання сім’ї та громадянства. Час прийому узгоджують під час запису.',[['Запис',T('+39 0721 887460')],['Коли дзвонити','Вт і пт 08:30–10:30 · чт 15:30–17:30'],['Email',M('klarita.grazhdani@comune.fano.pu.it')],['Адреса',A('Via Sant’Eusebio, 32, 61032 Fano')]],{soft:true,src:'comune'})}
+  ${card('Agenzia delle Entrate','Codice fiscale','Податковий код можуть присвоїти під час оформлення дозволу. Якщо коду немає або в ньому помилка – запит за формою AA4/8.',[['Зі стаціонарного',T('800 90 96 96')],['З мобільного',T('+39 06 9666 8907')],['Адреса',A('Via Fanella, 93, 61032 Fano')],['Прийом','За записом через Webticket. Місцеві години й email офісу у Фано в офіційних джерелах не вказано.']],{actions:[['Записатися через Webticket',SRC.ade[1]]],src:'ade'})}
+  ${card('Ufficio Anagrafe','Реєстрація місця проживання','Для першої реєстрації після переїзду з-за кордону напишіть і уточніть, які документи подати.',[['Телефони · 12:30–14:00',T('+39 0721 887233')+' · '+T('+39 0721 887234')],['Email',M('anagrafe@comune.fano.pu.it')],['PEC',PEC('comune.fano.anagrafe@emarche.it')],['Адреса',A('Via San Francesco d’Assisi, 76, 61032 Fano')],['Прийом','Пн–пт 09:00–12:30<br>Вт і чт також 15:30–17:30']],{src:'comune'})}</div>`},
  {id:'medytsyna',name:'Медицина й сімейний лікар',intro:'Реєстрація в державній системі охорони здоров’я, вибір лікаря й лікарня Фано.',html:`<div class="grid2">
-  ${card('Anagrafe Assistiti','Tessera sanitaria і вибір лікаря','Реєстрація в SSN, медична картка й вибір сімейного лікаря чи педіатра. За тимчасовим захистом – дозвіл на перебування або квитанція про подання заяви.',[['Телефон',T('+39 0721 1932845')],['Адреса','Via IV Novembre, 1, 61032 Fano'],['Прийом','Пн–пт 08:30–12:30 · чт також 14:30–16:00 · у липні й серпні в четвер лише зранку']])}
-  ${card('Ospedale Santa Croce','Лікарня Санта-Кроче','Pronto Soccorso працює цілодобово. В екстреній ситуації – 112.',[['Лікарня',T('+39 0721 8821')],['Адреса','Viale Vittorio Veneto, 2, 61032 Fano'],['Довідкова для пацієнтів · URP','Павільйон B2 · '+T('+39 0721 362203')+' · пн–пт 08:30–12:30'],['Email URP','urp.ast.pu@sanita.marche.it']])}</div>`},
- {id:'shkola',name:'Школа й садок',intro:'Якщо дитина приїхала посеред навчального року, заяву подають до секретаріату школи протягом року. Плановий запис до першого класу – через державний портал Unica.',html:`<article class="ic wide"><span class="tag">Segreteria scolastica</span><h3 class="card-t">Секретаріати шкіл Фано</h3><div class="tbl">
-  <div class="r"><span>Секретаріат</span><span>Адреса</span><span>Телефон</span><span>Email</span></div>
-  ${[['Gandiglio – San Lazzaro','Viale Gramsci, 3','+39 0721 801416','psic83800t@istruzione.it'],['Matteo Nuti','Via Redipuglia, 5','+39 0721 866988','psic829003@istruzione.it'],['Sant’Orso','Via Divisione Carpazi, 30','+39 0721 865155','psic843009@istruzione.it'],['Giovanni Padalino','Via M. Lanci, 2','+39 0721 801439','psic830007@istruzione.it'],['Faà di Bruno · район Torrette','Via Corfù, 17, Marotta','+39 0721 969461','psic83300p@istruzione.it']].map(r=>`<div class="r"><strong>${r[0]}</strong><span class="muted">${r[1]}</span>${T(r[2])}<span style="overflow-wrap:anywhere">${r[3]}</span></div>`).join('')}
- </div></article>
- ${card('Servizi Educativi 0–6','Садок і ясла','Ясла (nido d’infanzia) – від 3 місяців до 3 років. Садок (scuola dell’infanzia) – 3–6 років. Заяви онлайн через міський сервіс із входом через SPID або CIE.',[['Адреса','Piazzale della Stazione, 7, 61032 Fano'],['Прийом','Пн, ср, пт 08:30–13:30 · вт і чт 15:30–17:30'],['Запис',T('+39 0721 887441')+' · mcristina.dimaggio@comune.fano.pu.it<br>'+T('+39 0721 887608')+' · enrica.peroni@comune.fano.pu.it<br>'+T('+39 0721 887566')+' · valentina.magi@comune.fano.pu.it']])}`},
+  ${card('Anagrafe Assistiti','Tessera sanitaria і вибір лікаря','Реєстрація в SSN, медична картка й вибір сімейного лікаря чи педіатра. За тимчасовим захистом – дозвіл на перебування або квитанція про подання заяви.',[['Телефон',T('+39 0721 1932845')],['Адреса',A('Via IV Novembre, 1, 61032 Fano')],['Прийом','Пн–пт 08:30–12:30 · чт також 14:30–16:00<br>У липні й серпні в четвер – лише зранку'],['Email','Прямий email в офіційному довіднику не вказано']])}
+  ${card('Ospedale Santa Croce','Лікарня Санта-Кроче','Pronto Soccorso працює цілодобово. В екстреній ситуації – 112.',[['Лікарня',T('+39 0721 8821')],['Адреса',A('Viale Vittorio Veneto, 2, 61032 Fano')],['Довідкова для пацієнтів · URP','Павільйон B2 · '+T('+39 0721 362203')+'<br>Пн–пт 08:30–12:30'],['Email URP',M('urp.ast.pu@sanita.marche.it')]])}</div>`},
+ {id:'shkola',name:'Школа й садок',intro:'Якщо дитина приїхала до Італії посеред навчального року, заяву подають до секретаріату школи протягом року. Плановий запис до першого класу – через державний портал Unica.',html:`<article class="ic wide"><span class="tag">Segreteria scolastica</span><h3 class="card-t">Секретаріати шкіл Фано</h3>
+  <div class="ic-acts"><a class="btn soft sm" href="${SRC.unica[1]}" target="_blank" rel="noopener">Запис до першого класу в Unica ↗</a></div>
+  <table class="stbl"><caption class="sr">Секретаріати шкіл: адреса, телефон і email</caption><thead><tr><th scope="col">Секретаріат</th><th scope="col">Адреса</th><th scope="col">Телефон</th><th scope="col">Email</th></tr></thead><tbody>
+  ${[['Gandiglio – San Lazzaro','Viale Gramsci, 3, Fano','+39 0721 801416','psic83800t@istruzione.it'],['Matteo Nuti','Via Redipuglia, 5, Fano','+39 0721 866988','psic829003@istruzione.it'],['Sant’Orso','Via Divisione Carpazi, 30, Fano','+39 0721 865155','psic843009@istruzione.it'],['Giovanni Padalino','Via M. Lanci, 2, Fano','+39 0721 801439','psic830007@istruzione.it'],['Faà di Bruno · для району Torrette','Via Corfù, 17, Marotta','+39 0721 969461','psic83300p@istruzione.it']].map(r=>`<tr><th scope="row">${r[0]}</th><td data-l="Адреса">${A(r[1])}</td><td data-l="Телефон">${T(r[2])}</td><td data-l="Email">${M(r[3])}</td></tr>`).join('')}
+  </tbody></table><p class="src">Офіційне джерело: <a href="${SRC.unica[1]}" target="_blank" rel="noopener">${SRC.unica[0]} ↗</a></p></article>
+  ${card('Servizi Educativi 0–6','Садок і ясла','Ясла (nido d’infanzia) – від 3 місяців до 3 років, залежно від закладу. Садок (scuola dell’infanzia) – 3–6 років. Заяви подають онлайн через міський сервіс із входом через SPID або CIE.',[['Адреса',A('Piazzale della Stazione, 7, 61032 Fano')],['Прийом','Пн, ср, пт 08:30–13:30<br>Вт і чт 15:30–17:30'],['Запис і допомога із заявою',T('+39 0721 887441')+' · '+M('mcristina.dimaggio@comune.fano.pu.it')+'<br>'+T('+39 0721 887608')+' · '+M('enrica.peroni@comune.fano.pu.it')+'<br>'+T('+39 0721 887566')+' · '+M('valentina.magi@comune.fano.pu.it')]],{wide:true,src:'comune'})}`},
  {id:'kursy',name:'Курси італійської',intro:'Безкоштовні курси для дорослих у державному центрі освіти CPIA.',html:`<div class="grid2">
-  ${card('CPIA Pesaro-Urbino · відділення у Фано','Курси для дорослих','Курси A1–A2. Для тих, хто тільки починає й потребує допомоги з латинським алфавітом, є модулі Pre-A1. Запис онлайн, розклад і наявність місць – у відділенні.',[['Телефон',T('+39 0721 827968')],['Адреса','Via Nolfi, 37, 61032 Fano'],['Email','fano@cpiapesarourbino.it'],['Години','08:00–13:00']])}
-  ${card('URP Comune di Fano','Довідкова служба міста','Підкажуть, до якого відділу міста звернутися.',[['Телефони',T('+39 0721 887521')+' · '+T('+39 0721 887526')],['Адреса','Piazza XX Settembre, 23, Fano'],['Email','urpinforma@comune.fano.pu.it'],['Прийом','Пн–пт 09:00–13:00']],true)}</div>`},
- {id:'terminovo',name:'Термінові контакти',intro:'',html:`<div class="sos"><span class="n">112</span><div class="t"><p class="card-t">Екстрена допомога</p><p style="opacity:.85">Єдиний номер для виклику поліції, пожежників або швидкої в регіоні Марке.</p></div><a class="btn" style="background:var(--yellow);color:var(--text)" href="tel:112">Подзвонити 112</a></div>
+  ${card('CPIA Pesaro-Urbino · відділення у Фано','Курси для дорослих','Курси A1–A2. Для тих, хто тільки починає й потребує допомоги з латинським алфавітом, є модулі Pre-A1. Запис онлайн. Розклад і наявність місць уточнюйте у відділенні.',[['Телефон',T('+39 0721 827968')],['Email',M('fano@cpiapesarourbino.it')],['Адреса',A('Via Nolfi, 37, 61032 Fano')],['Години','08:00–13:00 · дні тижня уточнюйте у відділенні']])}</div>`},
+ {id:'terminovo',name:'Корисні адреси й термінові контакти',intro:'',html:`<div class="sos"><span class="n">112</span><div class="t"><p class="card-t">Екстрена допомога</p><p style="opacity:.85">Єдиний номер для виклику поліції, пожежників або швидкої в регіоні Марке.</p></div><a class="btn" style="background:var(--yellow);color:var(--text)" href="tel:112">Подзвонити 112</a></div>
   <div class="grid2">
-  ${card('Guardia Medica','Черговий лікар','Медичні питання поза годинами роботи сімейного лікаря. Перед візитом зателефонуйте й уточніть години чергування.',[['Телефон',T('+39 0721 1932261')],['Адреса','Via Pizzagalli, павільйон D лікарні Santa Croce, Fano']])}
-  ${card('Polizia Locale','Міська поліція','',[['Телефон',T('+39 0721 887715')],['Чергування',T('800 094 141')+', опція 1'],['Адреса','Via Mura Malatestiane, 2, Fano'],['Email','polizia.municipale@comune.fano.pu.it']])}
-  ${card('Commissariato di Fano','Відділок поліції','',[['Телефон',T('+39 0721 83351')],['Адреса','Via della Costituzione, 21, Fano'],['PEC','dipps163.5100@pecps.poliziadistato.it']])}</div>`}];
-$('#tabs').insertAdjacentHTML('beforeend',DIR.map(d=>`<button class="tab" role="tab" id="tab-${d.id}" aria-selected="false" aria-controls="panel" data-tab="${d.id}">${d.name}</button>`).join(''));
+  ${card('Guardia Medica','Черговий лікар','Медичні питання поза годинами роботи сімейного лікаря. Перед візитом зателефонуйте й уточніть години чергування.',[['Телефон',T('+39 0721 1932261')],['Адреса',A('Via Pizzagalli, Fano')+'<br><span class="small muted">Павільйон D лікарні Santa Croce</span>']])}
+  ${card('URP Comune di Fano','Довідкова служба міста','Підкажуть, до якого відділу міста звернутися.',[['Телефони',T('+39 0721 887521')+' · '+T('+39 0721 887526')],['Email',M('urpinforma@comune.fano.pu.it')],['Адреса',A('Piazza XX Settembre, 23, Fano')],['Прийом','Пн–пт 09:00–13:00']],{soft:true,src:'comune'})}
+  ${card('Polizia Locale','Міська поліція','',[['Телефон',T('+39 0721 887715')],['У години чергування',T('800 094 141')+', опція 1'],['Email',M('polizia.municipale@comune.fano.pu.it')],['Адреса',A('Via Mura Malatestiane, 2, Fano')]],{src:'comune'})}
+  ${card('Commissariato di Fano','Відділок поліції','',[['Телефон',T('+39 0721 83351')],['PEC',PEC('dipps163.5100@pecps.poliziadistato.it')],['Адреса',A('Via della Costituzione, 21, Fano')]])}</div>`}];
+$('#tabs').insertAdjacentHTML('beforeend',DIR.map(d=>`<button class="tab" role="tab" id="tab-${d.id}" aria-selected="false" tabindex="-1" aria-controls="panel" data-tab="${d.id}">${d.name}</button>`).join(''));
 function showTab(id,scroll){const d=DIR.find(x=>x.id===id)||DIR[0];
- $$('.tab').forEach(t=>t.setAttribute('aria-selected',t.dataset.tab===d.id));
+ $$('.tab').forEach(t=>{const on=t.dataset.tab===d.id;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;});
  $('#panel').setAttribute('aria-labelledby','tab-'+d.id);
- $('#panel').innerHTML=`<h2 class="h2">${d.name}</h2>${d.intro?`<p class="body-l">${d.intro}</p>`:''}${d.html}`;
+ $('#panel').innerHTML=`<h2 class="h2">${d.name}</h2>${d.intro?`<p class="body-l">${d.intro}</p>`:''}${d.html}<p class="checked">Дані перевірено 22 листопада 2026.</p>`;
  if(scroll){const y=$('.dir-body').getBoundingClientRect().top+scrollY-100;scrollTo({top:y,behavior:'smooth'});}}
 $('#tabs').onclick=e=>{const b=e.target.closest('[data-tab]');if(!b)return;history.replaceState(null,'','#dovidnyk-'+b.dataset.tab);showTab(b.dataset.tab);};
-$('#tabs').onkeydown=e=>{if(!['ArrowDown','ArrowUp','ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();const t=$$('.tab');const i=t.findIndex(x=>x.getAttribute('aria-selected')==='true');const n=t[(i+(e.key==='ArrowDown'||e.key==='ArrowRight'?1:-1)+t.length)%t.length];n.click();n.focus();};
+$('#tabs').onkeydown=e=>{const k=e.key;if(!['ArrowDown','ArrowUp','ArrowLeft','ArrowRight','Home','End'].includes(k))return;e.preventDefault();const t=$$('.tab');const i=t.indexOf(document.activeElement);let n=k==='Home'?0:k==='End'?t.length-1:(i+(k==='ArrowDown'||k==='ArrowRight'?1:-1)+t.length)%t.length;t[n].click();t[n].focus();t[n].scrollIntoView({block:'nearest',inline:'nearest'});};
 
 // ---------- routing ----------
 function route(){const h=location.hash.slice(1)||'home';
- let view='home',anchor=null,tab=null;
- if(h==='dovidnyk'||h.startsWith('dovidnyk-')){view='dovidnyk';tab=h.split('-')[1]||'dokumenty';}
- else if(h==='fotoarkhiv'){view='fotoarkhiv';}
- else if(h!=='home'){anchor=h;}
- $$('[data-view]').forEach(v=>v.hidden=v.dataset.view!==view);
- $$('.nav a').forEach(a=>a.removeAttribute('aria-current'));
- const cur=view==='home'?null:$(`.nav a[data-nav="${view}"]`);cur&&cur.setAttribute('aria-current','page');
+ // альбом за прямим посиланням
+ const am=h.match(/^fotoarkhiv\/(.+)$/);
+ if(am){const fromHome=albumBack&&!albumBack.hash.startsWith('#fotoarkhiv');
+  if(!fromHome){setView('fotoarkhiv');}
+  if(!showAlbumDlg(am[1])){history.replaceState(null,'','#fotoarkhiv');route();}return;}
+ // повернення з альбому (кнопка «Назад» або закриття)
+ if($('#albumOv').classList.contains('open')){closeDlg($('#albumOv'));
+  if(albumBack&&location.hash===albumBack.hash){const y=albumBack.y;albumBack=null;setView(viewOf(h));scrollTo(0,y);return;}
+  albumBack=null;}
+ let view=viewOf(h),anchor=null,tab=null;
+ if(view==='dovidnyk')tab=h.split('-')[1]||'dokumenty';
+ else if(view==='home'&&h!=='home')anchor=h;
+ setView(view);
  if(view==='dovidnyk'){showTab(tab,h.startsWith('dovidnyk-'));if(!h.startsWith('dovidnyk-'))scrollTo(0,0);}
  else if(anchor){const el=document.getElementById(anchor);el?setTimeout(()=>el.scrollIntoView({behavior:'smooth'}),0):scrollTo(0,0);}
  else scrollTo(0,0);
  setTimeout(thxState,50);}
+function viewOf(h){return h==='dovidnyk'||h.startsWith('dovidnyk-')?'dovidnyk':(h==='fotoarkhiv'||h.startsWith('fotoarkhiv/'))?'fotoarkhiv':'home';}
+function setView(view){$$('[data-view]').forEach(v=>v.hidden=v.dataset.view!==view);
+ $$('.nav a').forEach(a=>a.removeAttribute('aria-current'));
+ const c=view==='home'?null:$(`.nav a[data-nav="${view}"]`);c&&c.setAttribute('aria-current','page');}
 addEventListener('hashchange',route);route();
 </script>
 </body>
